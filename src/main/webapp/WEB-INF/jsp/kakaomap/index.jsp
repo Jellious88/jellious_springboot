@@ -90,9 +90,11 @@
 <script>
 // 마커를 담을 배열
 var markers = [];
+// useMapBounds 사용여부
+var useMapBounds = false;
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
+var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
+var mapOption = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
     };  
@@ -109,6 +111,32 @@ var contentNode = document.createElement('div');
 contentNode.className = 'placeinfo_wrap';
 placeOverlay.setContent(contentNode);
 
+//HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+if (navigator.geolocation) {
+    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+    navigator.geolocation.getCurrentPosition(function(position) {
+    	if(position == null || position == undefined || position == 'undefined'){
+    		alert("사용자의 위치정보를 가져올 수 없습니다.");
+    		return false;
+    	}
+        var lat = position.coords.latitude; // 위도
+        var lon = position.coords.longitude; // 경도
+        var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+      
+        var marker = new kakao.maps.Marker({  
+            position: locPosition
+        });
+        
+        marker.setMap(map);
+        
+        map.setCenter(locPosition);
+            
+      });
+    
+} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+    alert("사용자의 위치정보를 가져올 수 없습니다.");
+}
+
 // 매개변수로 넘어온 키워드를 사용하여 검색하는 함수
 function setKeywordAndSearchPlace(keyword){
 	document.getElementById('keyword').value = keyword;
@@ -120,7 +148,7 @@ function setKeywordAndSearchPlace(keyword){
 function searchPlaces() {
 	
 	var keyword = document.getElementById('keyword').value;
-	var useMapBounds = document.getElementById('useMapBounds').checked;
+	useMapBounds = document.getElementById('useMapBounds').checked;
 	
     if (!keyword.replace(/^\s+|\s+$/g, '')) {
         alert('키워드를 입력해주세요!');
@@ -179,23 +207,28 @@ function displayPlaces(places) {
         // 마커와 검색결과 항목에 mouseover 했을때
         // 해당 장소에 인포윈도우에 장소명을 표시합니다
         // mouseout 했을 때는 인포윈도우를 닫습니다
-        (function(marker, places) {
+        (function(marker, places, placePosition) {
             kakao.maps.event.addListener(marker, 'mouseover', function() {
             	displayPlaceInfo(places);
             });
 
             kakao.maps.event.addListener(marker, 'mouseout', function() {
-            	placeOverlay.setMap(null);
+//             	placeOverlay.setMap(null);
             });
-
+            
             itemEl.onmouseover =  function () {
             	displayPlaceInfo(places);
             };
-
+            
             itemEl.onmouseout =  function () {
-            	placeOverlay.setMap(null);
+//             	placeOverlay.setMap(null);
             };
-        })(marker, places[i]);
+
+            itemEl.onclick =  function () {
+	            	map.setLevel(3);
+            	map.setCenter(placePosition);
+            };
+        })(marker, places[i], placePosition);
 
         fragment.appendChild(itemEl);
     }
@@ -205,7 +238,7 @@ function displayPlaces(places) {
     menuEl.scrollTop = 0;
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-    map.setBounds(bounds);
+    if(!useMapBounds)map.setBounds(bounds);
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -241,8 +274,8 @@ function addMarker(position, idx, title) {
             spriteOrigin : new kakao.maps.Point(0, (idx*46)+10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
             offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
         };
-	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-            marker = new kakao.maps.Marker({
+	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions);
+    var marker = new kakao.maps.Marker({
             position: position, // 마커의 위치
             image: markerImage 
         });
@@ -297,6 +330,7 @@ function displayPagination(pagination) {
 function displayPlaceInfo(place) {
 	var content = '<div class="placeinfo">' +
 	    '   <p class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</p>';   
+// 	    '   <a class="title" href="https://map.kakao.com/link/to/' + place.place_name + ',' + place.y + ',' + place.x + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';   
 	
 	if (place.road_address_name) {
 	content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
@@ -320,7 +354,8 @@ function removeAllChildNods(el) {
         el.removeChild (el.lastChild);
     }
 }
-</script>
+
+ </script>
 </body>
 </html>
 
