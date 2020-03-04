@@ -123,12 +123,15 @@ if (navigator.geolocation) {
         var lon = position.coords.longitude; // 경도
         var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
       
+        /*
         var marker = new kakao.maps.Marker({  
             position: locPosition
         });
         
         marker.setMap(map);
+        */
         
+        map.setLevel(3);
         map.setCenter(locPosition);
             
       });
