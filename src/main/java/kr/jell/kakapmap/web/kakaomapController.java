@@ -13,7 +13,7 @@ public class kakaomapController {
 		return "/kakaomap/index_catagory_with_search"; 
 	}
 	
-	@GetMapping("/") 
+	@GetMapping("") 
 	public String welcome() {
 		return "/kakaomap/index"; 
 	}
