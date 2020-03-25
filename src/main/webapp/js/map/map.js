@@ -8,6 +8,11 @@ var contentNode;	// 커스텀 오버레이 내 장소 정보
 var currKeywd;		// 현재 선택된 키워드를 가지고 있을 변수
 var isItemClick = false;
 var searchList = false;
+var excRetry = false;
+var region;
+var town;
+var hospitalNm;
+var hospitalCd;
 
 var useMapBounds;
 $(function(){
@@ -16,9 +21,10 @@ $(function(){
 	listTgl();
 	mapBtnTgl();
 	
-	var region = getParameterByName("region");
-	var town = getParameterByName("town");
-	var hospitalNm = getParameterByName("hospitalNm");
+	region = getParameterByName("region");
+	town = getParameterByName("town");
+	hospitalNm = checkHospitalNm(getParameterByName("hospitalNm"));
+	hospitalCd = getParameterByName("hospitalCd");
 	
 	if(region == "" || town == "" || hospitalNm == "" ){
 		searchList = true;
@@ -50,9 +56,46 @@ $(function(){
 		useGeolocation();
 	}else{
 		useMapBounds = false;
-		searchPlaces(region + " " + town + " " + hospitalNm);
+		searchPlaces();
 	}
 });
+
+function checkHospitalNm(hospitalNm){
+	hospitalNm = hospitalNm .split('*')[0].trim();
+
+	hospitalListObject = {
+			"(Drive-thru)" : "",
+			"의료법인성수의료재단인천백병원" : "인천백병원",          
+			"의료법인 백송의료재단 굿모닝병원" : "굿모닝병원",        
+			"의료법인 박애의료재단 박애병원" : "박애병원",          
+			"의료법인정산의료재단효성병원" : "효성병원",            
+			"의료법인 대우병원" : "대우병원",                 
+			"의료법인이도의료 재단 남해병원" : "남해병원",          
+			"고려대학교의과대학부속구로병원" : "고려대학병원",         
+			"(학)고려대학교의과대학부속병원(안암병원)" : "안암병원",    
+			"충청남도천안의료원(소아청소년과 없음)" : "충청남도천안의료원", 
+			"한국보훈복지의료공단중앙보훈병원" : "중앙보훈병원",        
+			"학교법인연세대학교의과대학세브란스병원" : "세브란스병원",     
+			"학교법인가톨릭학원가톨릭대학교서울성모병원" : "서울성모병원",   
+			"동남권원자력의원" : "동남권원자력의학원",             
+			"석경의료재단 센트럴병원" : "센트럴병원",             
+			"연세대학교 원주세브란스기독병원" : "원주세브란스기독병원",    
+			"(의)석천재단고창병원" : "고창종합병원",             
+			"청도군보건소(치매안심센터)" : "청도군보건소",          
+			"효신의료재단 지샘병원" : "지샘병원",               
+			"의료법인승연의료재단 제일병원" : "제일병원",
+			"한마음의료재단 하나병원" : "하나병원",
+			"연세대학교의과대학강남세브란스병원" : "세브란스병원",
+			"이화여자대학교의과대학부속서울병원" : "이대서울병원",
+			"성심의료재단강동성심병원" : "강동성심병원"  
+	}
+	
+	if(hospitalListObject[hospitalNm] != undefined || hospitalListObject[hospitalNm] != null) {
+		hospitalNm = hospitalListObject[hospitalNm];
+	}
+	
+	return hospitalNm;
+}
 
 function useGeolocation() {
 	//HTML5의 geolocation 사용 가능여부
@@ -75,8 +118,8 @@ function useGeolocation() {
 }
 
 // 키워드 검색을 요청하는 함수
-function searchPlaces(keyword) {
-	currKeywd = keyword;
+function searchPlaces() {
+	currKeywd = region + " " + town + " " + hospitalNm;
 	keywordSearchUseCurrKeywd();
 	$('.side_wrap').addClass('open');
 }
@@ -85,11 +128,19 @@ function searchPlaces(keyword) {
 function keywordSearchUseCurrKeywd(){
 	
 	if (!currKeywd || isItemClick) {
-	        return;
-	    }
+        return;
+    }
 	
     // 키워드로 장소검색
-    ps.keywordSearch(currKeywd, placesSearchCB, {useMapBounds:useMapBounds}); 
+	
+	var searchKeywd = currKeywd;
+	
+	if(hospitalCd != 01){
+		excRetry = true;
+		searchKeywd = region + " " + town + " 선별진료소 " + hospitalNm;
+	}
+		
+	ps.keywordSearch(searchKeywd, placesSearchCB, {useMapBounds:useMapBounds}); 
 }
 
 // 장소검색 콜백함수
@@ -103,8 +154,11 @@ function placesSearchCB(data, status, pagination) {
     	displayPagination(pagination);
     	
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-    	if(map.getLevel() < 15){
-    		map.setLevel(map.getLevel() + 1);
+    	if(!searchList && excRetry){
+    		ps.keywordSearch(currKeywd, placesSearchCB, {useMapBounds:useMapBounds});
+    		excRetry = false;
+    	} else {
+    		if(map.getLevel() < 15){ map.setLevel(map.getLevel() + 1); }
     	}
         return;
     } else if (status === kakao.maps.services.Status.ERROR) {

@@ -1,0 +1,1024 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<title>국민안심병원 현황 (20년 3월 24일 기준)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+	    table {
+	      width: 100%;
+	    }
+	    table, th, td {
+	      border: 1px solid #bcbcbc;
+	    }
+  	</style>
+	<script src="/js/map/jquery-1.11.2.min.js"></script>
+	<script>
+	$(document).ready(function() {		
+		//지도버튼 생성
+		$("table tr").each(function(){ 
+			if($(this).parent().prop('tagName').toLocaleLowerCase() == 'thead'){
+				$(this).append("<th>지도</th>")
+			} else {
+				$(this).append("<td></td>")
+
+				var region = $(this).find("td").eq(0).text();
+				var town = $(this).find("td").eq(1).text();
+				var hospitalNm = $(this).find("td").eq(2).text();
+				
+				if(town == "" || town == null){
+					town = " ";
+				}
+				var url = "'http://localhost:8080/map?region="+region+"&town="+town+"&hospitalNm="+hospitalNm+"&hospitalCd=03'";
+
+				var str = '<input type="button" value="지도" onclick="window.open('+url+')" target="_blank">'
+				$(this).find("td:last").append(str);
+			}
+		});
+	});
+
+	</script>
+</head>
+
+<body>
+
+<div id="pop_wrap">
+	<div>
+		<h1>
+			<span>국민안심병원 현황<br />(20년 3월 24일 기준)</span>
+		</h1>
+	</div>
+
+	<div id="pop_container" >
+		<table id="user-table">
+			<colgroup>
+				<col style="width:10%">
+				<col style="width:12%">
+				<col style="width:15%">
+				<col style="width:30%">
+				<col style="width:13%">
+				<col style="width:20%">
+			</colgroup>	
+			<thead>
+				<tr>
+					<th scope="col">연번</th>
+					<th scope="col">시도</th>
+					<th scope="col">시군구</th>
+					<th scope="col">기관명</th>
+					<th scope="col">유형</th>
+					<th scope="col">전화번호</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><th scope="row">1</th><td>서울</td><td>강남구</td><td>강남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3423-5555</td></tr>
+				<tr><th scope="row">2</th><td>서울</td><td>강남구</td><td>삼성서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3410-2114</td></tr>
+				<tr><th scope="row">3</th><td>서울</td><td>강남구</td><td>연세대학교의과대학강남세브란스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2019-3114</td></tr>
+				<tr><th scope="row">4</th><td>서울</td><td>강동구</td><td>강동경희대학교의대병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-440-7000</td></tr>
+				<tr><th scope="row">5</th><td>서울</td><td>강동구</td><td>강동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3425-8565</td></tr>
+				<tr><th scope="row">6</th><td>서울</td><td>강동구</td><td>성심의료재단강동성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2224-2358</td></tr>
+				<tr><th scope="row">7</th><td>서울</td><td>강동구</td><td>한국보훈복지의료공단중앙보훈병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2225-1100</td></tr>
+				<tr><th scope="row">8</th><td>서울</td><td>강북구</td><td>강북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-901-7706, 02-901-7704</td></tr>
+				<tr><th scope="row">9</th><td>서울</td><td>강서구</td><td>강서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2600-5868</td></tr>
+				<tr><th scope="row">10</th><td>서울</td><td>강서구</td><td>이화여자대학교의과대학부속서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1522-7000</td></tr>
+				<tr><th scope="row">11</th><td>서울</td><td>관악구</td><td>관악구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-879-7131</td></tr>
+				<tr><th scope="row">12</th><td>서울</td><td>관악구</td><td>관악구보건소 신사동 코로나19 건강상담소</td><td>02-879-7241</td></tr>
+				<tr><th scope="row">13</th><td>서울</td><td>관악구</td><td>에이치플러스양지병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1877-8875</td></tr>
+				<tr><th scope="row">14</th><td>서울</td><td>광진구</td><td>광진구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-450-1937</td></tr>
+				<tr><th scope="row">15</th><td>서울</td><td>광진구</td><td>광진구보건소 자양보건지소</td><td>02-450-7090</td></tr>
+				<tr><th scope="row">16</th><td>서울</td><td>광진구</td><td>건국대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1588-1533</td></tr>
+				<tr><th scope="row">17</th><td>서울</td><td>구로구</td><td>구로구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-860-2003</td></tr>
+				<tr><th scope="row">18</th><td>서울</td><td>구로구</td><td>구로구보건소 가리봉동선별진료소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-860-2018</td></tr>
+				<tr><th scope="row">19</th><td>서울</td><td>구로구</td><td>고려대학교의과대학부속구로병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2626-1114</td></tr>
+				<tr><th scope="row">20</th><td>서울</td><td>금천구</td><td>금천구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2627-2717</td></tr>
+				<tr><th scope="row">21</th><td>서울</td><td>금천구</td><td>독산보건분소</td><td>02-2627-1967</td></tr>
+				<tr><th scope="row">22</th><td>서울</td><td>금천구</td><td>희명병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2219-7231</td></tr>
+				<tr><th scope="row">23</th><td>서울</td><td>노원구</td><td>노원구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2116-3300~4</td></tr>
+				<tr><th scope="row">24</th><td>서울</td><td>노원구</td><td>노원을지대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-970-8000</td></tr>
+				<tr><th scope="row">25</th><td>서울</td><td>노원구</td><td>인제대학교상계백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-950-1114</td></tr>
+				<tr><th scope="row">26</th><td>서울</td><td>도봉구</td><td>도봉구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2091-4483</td></tr>
+				<tr><th scope="row">27</th><td>서울</td><td>동대문구</td><td>동대문구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2127-4283</td></tr>
+				<tr><th scope="row">28</th><td>서울</td><td>동대문구</td><td>경희대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-958-8114</td></tr>
+				<tr><th scope="row">29</th><td>서울</td><td>동대문구</td><td>삼육서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1577-3675</td></tr>
+				<tr><th scope="row">30</th><td>서울</td><td>동대문구</td><td>서울특별시동부병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-920-9118~9</td></tr>
+				<tr><th scope="row">31</th><td>서울</td><td>동대문구</td><td>서울성심병원</td><td>02-966-1616</td></tr>
+				<tr><th scope="row">32</th><td>서울</td><td>동작구</td><td>동작구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-820-9465</td></tr>
+				<tr><th scope="row">33</th><td>서울</td><td>동작구</td><td>동작구보건소 신대방선별진료소</td><td>02-832-9404</td></tr>
+				<tr><th scope="row">34</th><td>서울</td><td>동작구</td><td>보라매병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-870-2114</td></tr>
+				<tr><th scope="row">35</th><td>서울</td><td>마포구</td><td>마포구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3153-9037</td></tr>
+				<tr><th scope="row">36</th><td>서울</td><td>서대문구</td><td>서대문구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-330-8726</td></tr>
+				<tr><th scope="row">37</th><td>서울</td><td>서대문구</td><td>학교법인연세대학교의과대학세브란스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1599-1004</td></tr>
+				<tr><th scope="row">38</th><td>서울</td><td>서초구</td><td>서초구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2155-8093</td></tr>
+				<tr><th scope="row">39</th><td>서울</td><td>서초구</td><td>학교법인가톨릭학원가톨릭대학교서울성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1588-1511</td></tr>
+				<tr><th scope="row">40</th><td>서울</td><td>서초구</td><td>서울특별시 어린이병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-570-8000</td></tr>
+				<tr><th scope="row">41</th><td>서울</td><td>성동구</td><td>성동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2286-7172</td></tr>
+				<tr><th scope="row">42</th><td>서울</td><td>성동구</td><td>한양대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2290-8114</td></tr>
+				<tr><th scope="row">43</th><td>서울</td><td>성북구</td><td>성북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2241-6022</td></tr>
+				<tr><th scope="row">44</th><td>서울</td><td>성북구</td><td>(학)고려대학교의과대학부속병원(안암병원)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1577-0083</td></tr>
+				<tr><th scope="row">45</th><td>서울</td><td>송파구</td><td>송파구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2147-3478~9</td></tr>
+				<tr><th scope="row">46</th><td>서울</td><td>송파구</td><td>재단법인아산사회복지재단서울아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3010-3114</td></tr>
+				<tr><th scope="row">47</th><td>서울</td><td>송파구</td><td>경찰병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3400-1933</td></tr>
+				<tr><th scope="row">48</th><td>서울</td><td>양천구</td><td>양천구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2620-3856</td></tr>
+				<tr><th scope="row">49</th><td>서울</td><td>양천구</td><td>서울특별시 서남병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1566-6688</td></tr>
+				<tr><th scope="row">50</th><td>서울</td><td>양천구</td><td>이화여자대학교의과대학부속목동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1666-5000</td></tr>
+				<tr><th scope="row">51</th><td>서울</td><td>양천구</td><td>홍익병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2600-0620</td></tr>
+				<tr><th scope="row">52</th><td>서울</td><td>영등포구</td><td>영등포구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2670-4953</td></tr>
+				<tr><th scope="row">53</th><td>서울</td><td>영등포구</td><td>한림대학교강남성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-829-5114</td></tr>
+				<tr><th scope="row">54</th><td>서울</td><td>영등포구</td><td>가톨릭대학교 여의도성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-1661-7575</td></tr>
+				<tr><th scope="row">55</th><td>서울</td><td>영등포구</td><td>성애의료재단성애병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-840-7114</td></tr>
+				<tr><th scope="row">56</th><td>서울</td><td>영등포구</td><td>명지성모병원</td><td>02-829-7800</td></tr>
+				<tr><th scope="row">57</th><td>서울</td><td>용산구</td><td>용산구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2199-8371~4</td></tr>
+				<tr><th scope="row">58</th><td>서울</td><td>용산구</td><td>순천향대학교 부속 서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-709-9114</td></tr>
+				<tr><th scope="row">59</th><td>서울</td><td>은평구</td><td>은평구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-351-8640</td></tr>
+				<tr><th scope="row">60</th><td>서울</td><td>은평구</td><td>서울특별시립 서북병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3156-3022</td></tr>
+				<tr><th scope="row">61</th><td>서울</td><td>은평구</td><td>서울특별시 은평병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-300-8060</td></tr>
+				<tr><th scope="row">62</th><td>서울</td><td>은평구</td><td>가톨릭대학교 은평성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-958-2114</td></tr>
+				<tr><th scope="row">63</th><td>서울</td><td>은평구</td><td>청구성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>383-0129</td></tr>
+				<tr><th scope="row">64</th><td>서울</td><td>종로구</td><td>종로구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2148-3557</td></tr>
+				<tr><th scope="row">65</th><td>서울</td><td>종로구</td><td>강북삼성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2001-2001</td></tr>
+				<tr><th scope="row">66</th><td>서울</td><td>종로구</td><td>서울적십자병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2002-8650</td></tr>
+				<tr><th scope="row">67</th><td>서울</td><td>종로구</td><td>서울지구병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-397-2018</td></tr>
+				<tr><th scope="row">68</th><td>서울</td><td>중구</td><td>인제대학교서울백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2270-0114</td></tr>
+				<tr><th scope="row">69</th><td>서울</td><td>중구</td><td>중구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-3396-5181</td></tr>
+				<tr><th scope="row">70</th><td>서울</td><td>중구</td><td>중구보건소 명동선별상담소</td><td>02-3396-5181</td></tr>
+				<tr><th scope="row">71</th><td>서울</td><td>중랑구</td><td>중랑구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2094-0800</td></tr>
+				<tr><th scope="row">72</th><td>서울</td><td>중랑구</td><td>서울의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2276-8333</td></tr>
+				<tr><th scope="row">73</th><td>부산</td><td>강서구</td><td>강서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-970-3415</td></tr>
+				<tr><th scope="row">74</th><td>부산</td><td>강서구</td><td>갑을녹산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-974-8449</td></tr>
+				<tr><th scope="row">75</th><td>부산</td><td>금정구</td><td>금정구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-519-5051</td></tr>
+				<tr><th scope="row">76</th><td>부산</td><td>금정구</td><td>세웅병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-500-9700</td></tr>
+				<tr><th scope="row">77</th><td>부산</td><td>기장군</td><td>동남권원자력의원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-720-5114</td></tr>
+				<tr><th scope="row">78</th><td>부산</td><td>기장군</td><td>기장군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-709-4796</td></tr>
+				<tr><th scope="row">79</th><td>부산</td><td>남구</td><td>남구 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-607-6460</td></tr>
+				<tr><th scope="row">80</th><td>부산</td><td>남구</td><td>부산성모병원</td><td>051-933-7119</td></tr>
+				<tr><th scope="row">81</th><td>부산</td><td>동구</td><td>봉생병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-664-4000</td></tr>
+				<tr><th scope="row">82</th><td>부산</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-440-6500</td></tr>
+				<tr><th scope="row">83</th><td>부산</td><td>동구</td><td>좋은문화병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-644-2002</td></tr>
+				<tr><th scope="row">84</th><td>부산</td><td>동래구</td><td>대동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-554-1233</td></tr>
+				<tr><th scope="row">85</th><td>부산</td><td>동래구</td><td>동래구보건소 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-555-4000</td></tr>
+				<tr><th scope="row">86</th><td>부산</td><td>부산진구</td><td>인제대학교부산백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-890-8933</td></tr>
+				<tr><th scope="row">87</th><td>부산</td><td>부산진구</td><td>부산진구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-645-4000</td></tr>
+				<tr><th scope="row">88</th><td>부산</td><td>부산진구</td><td>온종합병원</td><td>051-607-0139</td></tr>
+				<tr><th scope="row">89</th><td>부산</td><td>부산진구</td><td>동의병원</td><td>051-850-8777</td></tr>
+				<tr><th scope="row">90</th><td>부산</td><td>부산진구</td><td>춘해병원</td><td>051-608-0119</td></tr>
+				<tr><th scope="row">91</th><td>부산</td><td>북구</td><td>북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-309-4500</td></tr>
+				<tr><th scope="row">92</th><td>부산</td><td>북구</td><td>의료법인 인당의료재단 부민병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-330-3000</td></tr>
+				<tr><th scope="row">93</th><td>부산</td><td>북구</td><td>구포성심병원</td><td>051-330-2001</td></tr>
+				<tr><th scope="row">94</th><td>부산</td><td>사상구</td><td>사상구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-310-4791</td></tr>
+				<tr><th scope="row">95</th><td>부산</td><td>사상구</td><td>좋은삼선병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-322-0900</td></tr>
+				<tr><th scope="row">96</th><td>부산</td><td>사하구</td><td>사하구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-220-5701</td></tr>
+				<tr><th scope="row">97</th><td>부산</td><td>서구</td><td>서구 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-242-4000</td></tr>
+				<tr><th scope="row">98</th><td>부산</td><td>서구</td><td>동아대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-240-2400</td></tr>
+				<tr><th scope="row">99</th><td>부산</td><td>서구</td><td>고신대학교복음병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-990-3233</td></tr>
+				<tr><th scope="row">100</th><td>부산</td><td>서구</td><td>삼육부산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-600-7575</td></tr>
+				<tr><th scope="row">101</th><td>부산</td><td>수영구</td><td>좋은강안병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-625-0900</td></tr>
+				<tr><th scope="row">102</th><td>부산</td><td>수영구</td><td>비에이치에스한서병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-756-0081</td></tr>
+				<tr><th scope="row">103</th><td>부산</td><td>수영구</td><td>수영구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-752-4000</td></tr>
+				<tr><th scope="row">104</th><td>부산</td><td>연제구</td><td>연제구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-665-4781</td></tr>
+				<tr><th scope="row">105</th><td>부산</td><td>영도구</td><td>영도구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-419-4931</td></tr>
+				<tr><th scope="row">106</th><td>부산</td><td>영도구</td><td>영도병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-419-7881</td></tr>
+				<tr><th scope="row">107</th><td>부산</td><td>영도구</td><td>해동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-410-6682</td></tr>
+				<tr><th scope="row">108</th><td>부산</td><td>중구</td><td>중구 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-600-4741</td></tr>
+				<tr><th scope="row">109</th><td>부산</td><td>중구</td><td>메리놀병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주)051- 461-2348, (야)051- 461-2300</td></tr>
+				<tr><th scope="row">110</th><td>부산</td><td>해운대구</td><td>해운대구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-746-4000</td></tr>
+				<tr><th scope="row">111</th><td>부산</td><td>해운대구</td><td>해운대부민병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-602-8000</td></tr>
+				<tr><th scope="row">112</th><td>부산</td><td>해운대구</td><td>인제대학교해운대백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>051-797-0119</td></tr>
+				<tr><th scope="row">113</th><td>대구</td><td>남구</td><td>영남대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-623-8001, 053-620-3332</td></tr>
+				<tr><th scope="row">114</th><td>대구</td><td>남구</td><td>대구 가톨릭대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-650-3000</td></tr>
+				<tr><th scope="row">115</th><td>대구</td><td>남구</td><td>남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-664-3644, 053-664-3582</td></tr>
+				<tr><th scope="row">116</th><td>대구</td><td>남구</td><td>굿모닝병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-620-9100</td></tr>
+				<tr><th scope="row">117</th><td>대구</td><td>남구</td><td>드림병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-640-8800</td></tr>
+				<tr><th scope="row">118</th><td>대구</td><td>달서구</td><td>달서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-667-5754, 053-667-3123</td></tr>
+				<tr><th scope="row">119</th><td>대구</td><td>달서구</td><td>계명대학교 동산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-258-6879</td></tr>
+				<tr><th scope="row">120</th><td>대구</td><td>달서구</td><td>보광병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-651-3232</td></tr>
+				<tr><th scope="row">121</th><td>대구</td><td>달서구</td><td>의료법인구의료재단 구병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-560-9114</td></tr>
+				<tr><th scope="row">122</th><td>대구</td><td>달서구</td><td>삼일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-659-3100</td></tr>
+				<tr><th scope="row">123</th><td>대구</td><td>달서구</td><td>더블유병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-550-5003 </td></tr>
+				<tr><th scope="row">124</th><td>대구</td><td>달서구</td><td>세강병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-215-6200</td></tr>
+				<tr><th scope="row">125</th><td>대구</td><td>달성군</td><td>달성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-668-3121, 053-668-3114</td></tr>
+				<tr><th scope="row">126</th><td>대구</td><td>동구</td><td>대구파티마병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1688-7770, 053-940-7098</td></tr>
+				<tr><th scope="row">127</th><td>대구</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-662-3225, 053-662-3274</td></tr>
+				<tr><th scope="row">128</th><td>대구</td><td>북구</td><td>칠곡경북대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-200-2000</td></tr>
+				<tr><th scope="row">129</th><td>대구</td><td>북구</td><td>북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-665-2756, 053-665-2760</td></tr>
+				<tr><th scope="row">130</th><td>대구</td><td>북구</td><td>대구가톨릭대학교 칠곡가톨릭병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-320-2186</td></tr>
+				<tr><th scope="row">131</th><td>대구</td><td>북구</td><td>근로복지공단 대구병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-715-7575</td></tr>
+				<tr><th scope="row">132</th><td>대구</td><td>서구</td><td>서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-663-3176, 053-663-3178</td></tr>
+				<tr><th scope="row">133</th><td>대구</td><td>수성구</td><td>수성구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-666-3264, 053-666-3266</td></tr>
+				<tr><th scope="row">134</th><td>대구</td><td>중구</td><td>중구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-661-3804, 053-661-3826</td></tr>
+				<tr><th scope="row">135</th><td>인천</td><td>강화군</td><td>강화군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-930-4081</td></tr>
+				<tr><th scope="row">136</th><td>인천</td><td>강화군</td><td>비에스종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-290-0001</td></tr>
+				<tr><th scope="row">137</th><td>인천</td><td>계양구</td><td>한림병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-540-9114</td></tr>
+				<tr><th scope="row">138</th><td>인천</td><td>계양구</td><td>메디플렉스 세종병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-240-8000</td></tr>
+				<tr><th scope="row">139</th><td>인천</td><td>계양구</td><td>계양구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-430-7821</td></tr>
+				<tr><th scope="row">140</th><td>인천</td><td>남동구</td><td>남동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-466-3808</td></tr>
+				<tr><th scope="row">141</th><td>인천</td><td>동구</td><td>의료법인성수의료재단인천백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-765-7070</td></tr>
+				<tr><th scope="row">142</th><td>인천</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-770-5700</td></tr>
+				<tr><th scope="row">143</th><td>인천</td><td>미추홀구</td><td>현대유비스 병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-890-5509</td></tr>
+				<tr><th scope="row">144</th><td>인천</td><td>미추홀구</td><td>미추홀구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-880-5311</td></tr>
+				<tr><th scope="row">145</th><td>인천</td><td>미추홀구</td><td>인천사랑병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-457-2000</td></tr>
+				<tr><th scope="row">146</th><td>인천</td><td>부평구</td><td>가톨릭대학교 인천성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1544-9004</td></tr>
+				<tr><th scope="row">147</th><td>인천</td><td>부평구</td><td>부평세림병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-524-0591</td></tr>
+				<tr><th scope="row">148</th><td>인천</td><td>부평구</td><td>근로복지공단 인천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-500-0114</td></tr>
+				<tr><th scope="row">149</th><td>인천</td><td>부평구</td><td>부평구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-509-8200</td></tr>
+				<tr><th scope="row">150</th><td>인천</td><td>서구</td><td>국제성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1600-8291</td></tr>
+				<tr><th scope="row">151</th><td>인천</td><td>서구</td><td>나은병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-584-0114</td></tr>
+				<tr><th scope="row">152</th><td>인천</td><td>서구</td><td>성민병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-726-1119</td></tr>
+				<tr><th scope="row">153</th><td>인천</td><td>서구</td><td>검단탑병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-590-0114</td></tr>
+				<tr><th scope="row">154</th><td>인천</td><td>서구</td><td>온누리병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-568-9111</td></tr>
+				<tr><th scope="row">155</th><td>인천</td><td>서구</td><td>서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-560-5000</td></tr>
+				<tr><th scope="row">156</th><td>인천</td><td>연수구</td><td>나사렛 국제병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-899-9999</td></tr>
+				<tr><th scope="row">157</th><td>인천</td><td>연수구</td><td>연수구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-749-8000</td></tr>
+				<tr><th scope="row">158</th><td>인천</td><td>연수구</td><td>인천적십자병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-899-4287</td></tr>
+				<tr><th scope="row">159</th><td>인천</td><td>옹진군</td><td>옹진군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-899-3120</td></tr>
+				<tr><th scope="row">160</th><td>인천</td><td>옹진군</td><td>백령병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-836-1731</td></tr>
+				<tr><th scope="row">161</th><td>인천</td><td>중구</td><td>인천기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-270-8000</td></tr>
+				<tr><th scope="row">162</th><td>인천</td><td>중구</td><td>중구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-760-6050</td></tr>
+				<tr><th scope="row">163</th><td>인천</td><td>중구</td><td>중구보건소 용유지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-760-8991</td></tr>
+				<tr><th scope="row">164</th><td>인천</td><td>중구</td><td>영종보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-760-6800</td></tr>
+				<tr><th scope="row">165</th><td>광주</td><td>광산구</td><td>광산구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-960-8859</td></tr>
+				<tr><th scope="row">166</th><td>광주</td><td>광산구</td><td>첨단종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>주 062-601-8771, 야 062-601-8119</td></tr>
+				<tr><th scope="row">167</th><td>광주</td><td>광산구</td><td>KS병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-975-9119</td></tr>
+				<tr><th scope="row">168</th><td>광주</td><td>남구</td><td>광주기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-650-5119</td></tr>
+				<tr><th scope="row">169</th><td>광주</td><td>남구</td><td>남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-607-4450</td></tr>
+				<tr><th scope="row">170</th><td>광주</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-608-3312</td></tr>
+				<tr><th scope="row">171</th><td>광주</td><td>북구</td><td>광주일곡병원</td><td>062-608-7119</td></tr>
+				<tr><th scope="row">172</th><td>광주</td><td>북구</td><td>북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-410-8961</td></tr>
+				<tr><th scope="row">173</th><td>광주</td><td>서구</td><td>서광병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-600-8119, 8161</td></tr>
+				<tr><th scope="row">174</th><td>광주</td><td>서구</td><td>서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>062-350-4158</td></tr>
+				<tr><th scope="row">175</th><td>대전</td><td>대덕구</td><td>대덕구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-608-5436~40</td></tr>
+				<tr><th scope="row">176</th><td>대전</td><td>대덕구</td><td>대전보훈병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-939-0118, 0100</td></tr>
+				<tr><th scope="row">177</th><td>대전</td><td>대덕구</td><td>근로복지공단 대전병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주)042-670-5406, (야)042-670-5119</td></tr>
+				<tr><th scope="row">178</th><td>대전</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-251-6305</td></tr>
+				<tr><th scope="row">179</th><td>대전</td><td>동구</td><td>대전한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-606-1500</td></tr>
+				<tr><th scope="row">180</th><td>대전</td><td>서구</td><td>서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-288-4500</td></tr>
+				<tr><th scope="row">181</th><td>대전</td><td>서구</td><td>건양대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-600-9999</td></tr>
+				<tr><th scope="row">182</th><td>대전</td><td>서구</td><td>을지대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-259-1060</td></tr>
+				<tr><th scope="row">183</th><td>대전</td><td>유성구</td><td>유성구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-611-5047</td></tr>
+				<tr><th scope="row">184</th><td>대전</td><td>유성구</td><td>유성선병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-609-1000</td></tr>
+				<tr><th scope="row">185</th><td>대전</td><td>중구</td><td>중구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-288-8043</td></tr>
+				<tr><th scope="row">186</th><td>대전</td><td>중구</td><td>대전선병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-220-8114</td></tr>
+				<tr><th scope="row">187</th><td>대전</td><td>중구</td><td>대전성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-220-9114</td></tr>
+				<tr><th scope="row">188</th><td>울산</td><td>남구</td><td>울산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-259-5000</td></tr>
+				<tr><th scope="row">189</th><td>울산</td><td>남구</td><td>좋은삼정병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-220-7500</td></tr>
+				<tr><th scope="row">190</th><td>울산</td><td>남구</td><td>의)정안의료재단 중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-226-1100</td></tr>
+				<tr><th scope="row">191</th><td>울산</td><td>남구</td><td>남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-226-2805</td></tr>
+				<tr><th scope="row">192</th><td>울산</td><td>동구</td><td>동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-209-4080</td></tr>
+				<tr><th scope="row">193</th><td>울산</td><td>북구</td><td>울산시티병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-280-9000</td></tr>
+				<tr><th scope="row">194</th><td>울산</td><td>북구</td><td>북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-289-3450</td></tr>
+				<tr><th scope="row">195</th><td>울산</td><td>울주군</td><td>서울산보람병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-255-7114</td></tr>
+				<tr><th scope="row">196</th><td>울산</td><td>울주군</td><td>울주군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-265-9095</td></tr>
+				<tr><th scope="row">197</th><td>울산</td><td>울주군</td><td>남부통합보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-204-2818</td></tr>
+				<tr><th scope="row">198</th><td>울산</td><td>중구</td><td>동강병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-241-1114</td></tr>
+				<tr><th scope="row">199</th><td>울산</td><td>중구</td><td>중구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>052-290-4300</td></tr>
+				<tr><th scope="row">200</th><td>세종</td><td></td><td>세종특별자치시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>044-301-2841~5</td></tr>
+				<tr><th scope="row">201</th><td>세종</td><td></td><td>세종특별자치시보건소(충남대학교병원세종의원)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>044-301-2841~5</td></tr>
+				<tr><th scope="row">202</th><td>경기</td><td>가평군</td><td>가평군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-582-2488</td></tr>
+				<tr><th scope="row">203</th><td>경기</td><td>가평군</td><td>HJ매그놀리아국제병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-589-4300</td></tr>
+				<tr><th scope="row">204</th><td>경기</td><td>고양시</td><td>덕양구 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8075-4059</td></tr>
+				<tr><th scope="row">205</th><td>경기</td><td>고양시</td><td>일산동구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8075-4135</td></tr>
+				<tr><th scope="row">206</th><td>경기</td><td>고양시</td><td>일산서구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8075-4212</td></tr>
+				<tr><th scope="row">207</th><td>경기</td><td>고양시</td><td>인제대학교 일산백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-910-7297</td></tr>
+				<tr><th scope="row">208</th><td>경기</td><td>고양시</td><td>동국대학교일산불교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-961-8010</td></tr>
+				<tr><th scope="row">209</th><td>경기</td><td>고양시</td><td>국민건강보험공단 일산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-900-0114</td></tr>
+				<tr><th scope="row">210</th><td>경기</td><td>고양시</td><td>일산복음병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-929-0330,0331</td></tr>
+				<tr><th scope="row">211</th><td>경기</td><td>과천시</td><td>과천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2150-3832</td></tr>
+				<tr><th scope="row">212</th><td>경기</td><td>광명시</td><td>광명성애병원</td><td>02-2680-7115</td></tr>
+				<tr><th scope="row">213</th><td>경기</td><td>광명시</td><td>광명시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>02-2680-2577 </td></tr>
+				<tr><th scope="row">214</th><td>경기</td><td>광주시</td><td>광주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-760-2359</td></tr>
+				<tr><th scope="row">215</th><td>경기</td><td>광주시</td><td>참조은병원</td><td>031-881-9285</td></tr>
+				<tr><th scope="row">216</th><td>경기</td><td>구리시</td><td>구리시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-550-8618</td></tr>
+				<tr><th scope="row">217</th><td>경기</td><td>구리시</td><td>한양대학교구리병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1644-9118</td></tr>
+				<tr><th scope="row">218</th><td>경기</td><td>군포시</td><td>효신의료재단 지샘병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-389-3000</td></tr>
+				<tr><th scope="row">219</th><td>경기</td><td>군포시</td><td>원광대학교 산본병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-390-2300</td></tr>
+				<tr><th scope="row">220</th><td>경기</td><td>군포시</td><td>군포시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-461-5464</td></tr>
+				<tr><th scope="row">221</th><td>경기</td><td>김포시</td><td>김포우리병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-999-1000</td></tr>
+				<tr><th scope="row">222</th><td>경기</td><td>김포시</td><td>뉴고려병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-998-8129</td></tr>
+				<tr><th scope="row">223</th><td>경기</td><td>김포시</td><td>김포시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5186-4051</td></tr>
+				<tr><th scope="row">224</th><td>경기</td><td>남양주시</td><td>남양주보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-590-4454</td></tr>
+				<tr><th scope="row">225</th><td>경기</td><td>남양주시</td><td>남양주풍양보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-590-6956</td></tr>
+				<tr><th scope="row">226</th><td>경기</td><td>남양주시</td><td>남양주한양병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-510-0114, 031-510-0119</td></tr>
+				<tr><th scope="row">227</th><td>경기</td><td>남양주시</td><td>현대병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-574-9118</td></tr>
+				<tr><th scope="row">228</th><td>경기</td><td>동두천시</td><td>동두천보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-860-3395</td></tr>
+				<tr><th scope="row">229</th><td>경기</td><td>부천시</td><td>부천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-625-4125</td></tr>
+				<tr><th scope="row">230</th><td>경기</td><td>부천시</td><td>부천시 오정보건소</td><td>032-625-8881</td></tr>
+				<tr><th scope="row">231</th><td>경기</td><td>부천시</td><td>부천시 소사보건소</td><td>032-625-8881~4</td></tr>
+				<tr><th scope="row">232</th><td>경기</td><td>부천시</td><td>순천향대학교 부천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-621-5114</td></tr>
+				<tr><th scope="row">233</th><td>경기</td><td>부천시</td><td>가톨릭대학교부천성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>032-340-2402</td></tr>
+				<tr><th scope="row">234</th><td>경기</td><td>부천시</td><td>부천세종병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>주간) 032-340-1897, 야간) 032-340-1119</td></tr>
+				<tr><th scope="row">235</th><td>경기</td><td>성남시</td><td>중원구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-729-3895</td></tr>
+				<tr><th scope="row">236</th><td>경기</td><td>성남시</td><td>분당제생병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-779-0100</td></tr>
+				<tr><th scope="row">237</th><td>경기</td><td>성남시</td><td>분당차병원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-780-5546</td></tr>
+				<tr><th scope="row">238</th><td>경기</td><td>성남시</td><td>수정구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-729-3870</td></tr>
+				<tr><th scope="row">239</th><td>경기</td><td>성남시</td><td>성남시의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-738-7000</td></tr>
+				<tr><th scope="row">240</th><td>경기</td><td>성남시</td><td>순천의료재단정병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-750-6000</td></tr>
+				<tr><th scope="row">241</th><td>경기</td><td>성남시</td><td>성남중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-799-5366</td></tr>
+				<tr><th scope="row">242</th><td>경기</td><td>수원시</td><td>권선구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-228-6716</td></tr>
+				<tr><th scope="row">243</th><td>경기</td><td>수원시</td><td>영통구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-228-8808</td></tr>
+				<tr><th scope="row">244</th><td>경기</td><td>수원시</td><td>장안구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-228-5715</td></tr>
+				<tr><th scope="row">245</th><td>경기</td><td>수원시</td><td>팔달구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-228-7716</td></tr>
+				<tr><th scope="row">246</th><td>경기</td><td>수원시</td><td>아주대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-219-5114</td></tr>
+				<tr><th scope="row">247</th><td>경기</td><td>수원시</td><td>경기도의료원 수원병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-888-0119, 031-888-0129</td></tr>
+				<tr><th scope="row">248</th><td>경기</td><td>수원시</td><td>성빈센트병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1577-8588</td></tr>
+				<tr><th scope="row">249</th><td>경기</td><td>수원시</td><td>동수원병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-210-0114</td></tr>
+				<tr><th scope="row">250</th><td>경기</td><td>시흥시</td><td>석경의료재단 센트럴병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8041-3530</td></tr>
+				<tr><th scope="row">251</th><td>경기</td><td>시흥시</td><td>신천연합병원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-310-6300</td></tr>
+				<tr><th scope="row">252</th><td>경기</td><td>시흥시</td><td>시흥시화병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-432-2600</td></tr>
+				<tr><th scope="row">253</th><td>경기</td><td>시흥시</td><td>시흥시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-310-5813</td></tr>
+				<tr><th scope="row">254</th><td>경기</td><td>시흥시</td><td>시흥시 정왕보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-310-5907</td></tr>
+				<tr><th scope="row">255</th><td>경기</td><td>안산시</td><td>단원보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-481-6363</td></tr>
+				<tr><th scope="row">256</th><td>경기</td><td>안산시</td><td>안산시상록수보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-481-5894</td></tr>
+				<tr><th scope="row">257</th><td>경기</td><td>안산시</td><td>고대안산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-412-5400</td></tr>
+				<tr><th scope="row">258</th><td>경기</td><td>안산시</td><td>한도병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8040-1369</td></tr>
+				<tr><th scope="row">259</th><td>경기</td><td>안산시</td><td>근로복지공단안산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-500-1114</td></tr>
+				<tr><th scope="row">260</th><td>경기</td><td>안성시</td><td>경기도의료원 안성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8046-5000</td></tr>
+				<tr><th scope="row">261</th><td>경기</td><td>안성시</td><td>안성성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-675-6007</td></tr>
+				<tr><th scope="row">262</th><td>경기</td><td>안성시</td><td>안성시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-678-5710</td></tr>
+				<tr><th scope="row">263</th><td>경기</td><td>안양시</td><td>동안구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8045-4472</td></tr>
+				<tr><th scope="row">264</th><td>경기</td><td>안양시</td><td>만안구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8045-3472</td></tr>
+				<tr><th scope="row">265</th><td>경기</td><td>안양시</td><td>한림대학교 성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-380-1500</td></tr>
+				<tr><th scope="row">266</th><td>경기</td><td>안양시</td><td>안양샘병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-467-9119</td></tr>
+				<tr><th scope="row">267</th><td>경기</td><td>양주시</td><td>양주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8082-7116</td></tr>
+				<tr><th scope="row">268</th><td>경기</td><td>양평군</td><td>양평군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-770-3490</td></tr>
+				<tr><th scope="row">269</th><td>경기</td><td>양평군</td><td>양평병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-770-5119</td></tr>
+				<tr><th scope="row">270</th><td>경기</td><td>여주시</td><td>세종여주병원</td><td>031-880-7700</td></tr>
+				<tr><th scope="row">271</th><td>경기</td><td>여주시</td><td>여주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-887-3601</td></tr>
+				<tr><th scope="row">272</th><td>경기</td><td>연천군</td><td>연천군 보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-839-4064</td></tr>
+				<tr><th scope="row">273</th><td>경기</td><td>오산시</td><td>오산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8036-6025</td></tr>
+				<tr><th scope="row">274</th><td>경기</td><td>오산시</td><td>오산한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-379-8300</td></tr>
+				<tr><th scope="row">275</th><td>경기</td><td>용인시</td><td>기흥구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-324-6975</td></tr>
+				<tr><th scope="row">276</th><td>경기</td><td>용인시</td><td>수지구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-324-8451, 8452, 8453</td></tr>
+				<tr><th scope="row">277</th><td>경기</td><td>용인시</td><td>강남병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-300-0380/0589</td></tr>
+				<tr><th scope="row">278</th><td>경기</td><td>용인시</td><td>처인구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-324-2114</td></tr>
+				<tr><th scope="row">279</th><td>경기</td><td>용인시</td><td>영문의료재단 다보스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8021-2000</td></tr>
+				<tr><th scope="row">280</th><td>경기</td><td>용인시</td><td>용인세브란스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5189-9010</td></tr>
+				<tr><th scope="row">281</th><td>경기</td><td>용인시</td><td>용인서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-322-0001</td></tr>
+				<tr><th scope="row">282</th><td>경기</td><td>의왕시</td><td>의왕시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-345-3572</td></tr>
+				<tr><th scope="row">283</th><td>경기</td><td>의왕시</td><td>아가페의료재단 시티병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-340-2555</td></tr>
+				<tr><th scope="row">284</th><td>경기</td><td>의정부시</td><td>경기도의료원의정부병원 (응급실)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-828-5143</td></tr>
+				<tr><th scope="row">285</th><td>경기</td><td>의정부시</td><td>의정부시보건소</td><td>031-870-6011~4</td></tr>
+				<tr><th scope="row">286</th><td>경기</td><td>의정부시</td><td>가톨릭대학교 의정부성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1661-7500</td></tr>
+				<tr><th scope="row">287</th><td>경기</td><td>의정부시</td><td>추병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-823-8063</td></tr>
+				<tr><th scope="row">288</th><td>경기</td><td>의정부시</td><td>의정부백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-842-1211</td></tr>
+				<tr><th scope="row">289</th><td>경기</td><td>이천시</td><td>경기도의료원 이천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-630-4200</td></tr>
+				<tr><th scope="row">290</th><td>경기</td><td>이천시</td><td>이천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-635-2400</td></tr>
+				<tr><th scope="row">291</th><td>경기</td><td>파주시</td><td>파주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-940-4800</td></tr>
+				<tr><th scope="row">292</th><td>경기</td><td>파주시</td><td>경기도의료원 파주병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-940-9100</td></tr>
+				<tr><th scope="row">293</th><td>경기</td><td>평택시</td><td>의료법인 백송의료재단 굿모닝병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5182-7700</td></tr>
+				<tr><th scope="row">294</th><td>경기</td><td>평택시</td><td>의료법인 박애의료재단 박애병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-652-2121</td></tr>
+				<tr><th scope="row">295</th><td>경기</td><td>평택시</td><td>의료법인 양진의료재단 평택성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1800-8800</td></tr>
+				<tr><th scope="row">296</th><td>경기</td><td>평택시</td><td>평택보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8024-5559</td></tr>
+				<tr><th scope="row">297</th><td>경기</td><td>평택시</td><td>평택시 안중보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8024-8618</td></tr>
+				<tr><th scope="row">298</th><td>경기</td><td>평택시</td><td>박병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-666-2600</td></tr>
+				<tr><th scope="row">299</th><td>경기</td><td>평택시</td><td>송탄보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8024-7236</td></tr>
+				<tr><th scope="row">300</th><td>경기</td><td>포천시</td><td>포천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-538-3600</td></tr>
+				<tr><th scope="row">301</th><td>경기</td><td>포천시</td><td>경기도의료원 포천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-539-9114</td></tr>
+				<tr><th scope="row">302</th><td>경기</td><td>포천시</td><td>소흘보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-538-4486</td></tr>
+				<tr><th scope="row">303</th><td>경기</td><td>포천시</td><td>일동보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-538-4488</td></tr>
+				<tr><th scope="row">304</th><td>경기</td><td>하남시</td><td>하남시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-790-6555</td></tr>
+				<tr><th scope="row">305</th><td>경기</td><td>화성시</td><td>화성중앙종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-371-8080</td></tr>
+				<tr><th scope="row">306</th><td>경기</td><td>화성시</td><td>화성시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5189-1200</td></tr>
+				<tr><th scope="row">307</th><td>경기</td><td>화성시</td><td>화성시보건소 동탄보건지소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5189-1200</td></tr>
+				<tr><th scope="row">308</th><td>경기</td><td>화성시</td><td>동탄성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1522-2500</td></tr>
+				<tr><th scope="row">309</th><td>경기</td><td>화성시</td><td>원광종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-8077-7219</td></tr>
+				<tr><th scope="row">310</th><td>경기</td><td>화성시</td><td>남양디에스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>031-5180-7777</td></tr>
+				<tr><th scope="row">311</th><td>강원</td><td>강릉시</td><td>강릉아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-610-4111</td></tr>
+				<tr><th scope="row">312</th><td>강원</td><td>강릉시</td><td>강릉동인병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-651-6161</td></tr>
+				<tr><th scope="row">313</th><td>강원</td><td>강릉시</td><td>강릉고려병원</td><td>033-649-0333</td></tr>
+				<tr><th scope="row">314</th><td>강원</td><td>강릉시</td><td>강릉시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-660-3090</td></tr>
+				<tr><th scope="row">315</th><td>강원</td><td>고성군</td><td>고성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-681-4000</td></tr>
+				<tr><th scope="row">316</th><td>강원</td><td>동해시</td><td>동해시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-530-2402</td></tr>
+				<tr><th scope="row">317</th><td>강원</td><td>동해시</td><td>동해동인병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-530-0119</td></tr>
+				<tr><th scope="row">318</th><td>강원</td><td>동해시</td><td>근로복지공단 동해병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-530-3119</td></tr>
+				<tr><th scope="row">319</th><td>강원</td><td>삼척시</td><td>삼척의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-570-7545, (야간)033-570-7431</td></tr>
+				<tr><th scope="row">320</th><td>강원</td><td>삼척시</td><td>삼척시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-570-4649</td></tr>
+				<tr><th scope="row">321</th><td>강원</td><td>속초시</td><td>속초시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-639-2924</td></tr>
+				<tr><th scope="row">322</th><td>강원</td><td>속초시</td><td>강원도속초의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-630-6190, (야간)033-630-6122</td></tr>
+				<tr><th scope="row">323</th><td>강원</td><td>속초시</td><td>속초보광병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-639-8557, (야간)033-639-8988</td></tr>
+				<tr><th scope="row">324</th><td>강원</td><td>양구군</td><td>양구군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-480-2791, (야간)033-480-2550</td></tr>
+				<tr><th scope="row">325</th><td>강원</td><td>양구군</td><td>의료법인 성심의료재단 양구성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-480-8800</td></tr>
+				<tr><th scope="row">326</th><td>강원</td><td>양양군</td><td>양양군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-670-2119, (야간)033-670-2880</td></tr>
+				<tr><th scope="row">327</th><td>강원</td><td>영월군</td><td>강원도영월의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-370-9129</td></tr>
+				<tr><th scope="row">328</th><td>강원</td><td>영월군</td><td>영월군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-370-2448</td></tr>
+				<tr><th scope="row">329</th><td>강원</td><td>원주시</td><td>연세대학교 원주세브란스기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-741-1641</td></tr>
+				<tr><th scope="row">330</th><td>강원</td><td>원주시</td><td>원주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-737-4007, (야간)033-737-4065</td></tr>
+				<tr><th scope="row">331</th><td>강원</td><td>원주시</td><td>강원도원주의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-760-4701~2</td></tr>
+				<tr><th scope="row">332</th><td>강원</td><td>인제군</td><td>인제군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-460-2516, (야간)033-461-2425</td></tr>
+				<tr><th scope="row">333</th><td>강원</td><td>정선군</td><td>근로복지공단정선병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-560-7110</td></tr>
+				<tr><th scope="row">334</th><td>강원</td><td>정선군</td><td>정선군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-560-2739</td></tr>
+				<tr><th scope="row">335</th><td>강원</td><td>철원군</td><td>철원군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-450-5550, 5468</td></tr>
+				<tr><th scope="row">336</th><td>강원</td><td>철원군</td><td>철원병원</td><td>033-450-3321</td></tr>
+				<tr><th scope="row">337</th><td>강원</td><td>춘천시</td><td>한림대학교 춘천성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-240-5815, (야간)033-240-5219</td></tr>
+				<tr><th scope="row">338</th><td>강원</td><td>춘천시</td><td>춘천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-250-4590, (야간)033-250-4597</td></tr>
+				<tr><th scope="row">339</th><td>강원</td><td>태백시</td><td>태백시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-550-2718, (야간)033-552-4000</td></tr>
+				<tr><th scope="row">340</th><td>강원</td><td>태백시</td><td>근로복지공단 태백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-581-6390, (야간)033-580-3119</td></tr>
+				<tr><th scope="row">341</th><td>강원</td><td>평창군</td><td>평창군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주간)033-330-4877, (야간)033-330-4800</td></tr>
+				<tr><th scope="row">342</th><td>강원</td><td>홍천군</td><td>홍천아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-430-5119</td></tr>
+				<tr><th scope="row">343</th><td>강원</td><td>홍천군</td><td>홍천군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-430-4024</td></tr>
+				<tr><th scope="row">344</th><td>강원</td><td>화천군</td><td>화천군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-442-4424</td></tr>
+				<tr><th scope="row">345</th><td>강원</td><td>횡성군</td><td>횡성대성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-343-0901</td></tr>
+				<tr><th scope="row">346</th><td>강원</td><td>횡성군</td><td>횡성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>033-340-5707</td></tr>
+				<tr><th scope="row">347</th><td>충북</td><td>괴산군</td><td>괴산군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-832-4000</td></tr>
+				<tr><th scope="row">348</th><td>충북</td><td>괴산군</td><td>괴산성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-830-5400</td></tr>
+				<tr><th scope="row">349</th><td>충북</td><td>단양군</td><td>단양군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-420-3263</td></tr>
+				<tr><th scope="row">350</th><td>충북</td><td>단양군</td><td>단양군립노인요양병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-423-8844</td></tr>
+				<tr><th scope="row">351</th><td>충북</td><td>보은군</td><td>(의료법인)정민의료재단 보은한양병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-544-1500</td></tr>
+				<tr><th scope="row">352</th><td>충북</td><td>보은군</td><td>보은군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-540-5601</td></tr>
+				<tr><th scope="row">353</th><td>충북</td><td>영동군</td><td>영동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-740-9000</td></tr>
+				<tr><th scope="row">354</th><td>충북</td><td>영동군</td><td>영동군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-740-5612</td></tr>
+				<tr><th scope="row">355</th><td>충북</td><td>옥천군</td><td>옥천성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-730-7000</td></tr>
+				<tr><th scope="row">356</th><td>충북</td><td>옥천군</td><td>옥천군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-730-2114</td></tr>
+				<tr><th scope="row">357</th><td>충북</td><td>음성군</td><td>음성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-872-2136</td></tr>
+				<tr><th scope="row">358</th><td>충북</td><td>음성군</td><td>금왕태성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-883-8800</td></tr>
+				<tr><th scope="row">359</th><td>충북</td><td>제천시</td><td>제천 서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-642-7609</td></tr>
+				<tr><th scope="row">360</th><td>충북</td><td>제천시</td><td>제천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-646-2720</td></tr>
+				<tr><th scope="row">361</th><td>충북</td><td>제천시</td><td>명지병원(제천)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-640-8373</td></tr>
+				<tr><th scope="row">362</th><td>충북</td><td>증평군</td><td>증평군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-835-4220</td></tr>
+				<tr><th scope="row">363</th><td>충북</td><td>진천군</td><td>진천성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-533-1711</td></tr>
+				<tr><th scope="row">364</th><td>충북</td><td>진천군</td><td>진천군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-539-7333</td></tr>
+				<tr><th scope="row">365</th><td>충북</td><td>청주시</td><td>상당보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-201-3143</td></tr>
+				<tr><th scope="row">366</th><td>충북</td><td>청주시</td><td>의료법인 인화재단한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-222-7000</td></tr>
+				<tr><th scope="row">367</th><td>충북</td><td>청주시</td><td>의료법인정산의료재단효성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-221-5000</td></tr>
+				<tr><th scope="row">368</th><td>충북</td><td>청주시</td><td>서원보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-201-3207</td></tr>
+				<tr><th scope="row">369</th><td>충북</td><td>청주시</td><td>충청북도 청주의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-279-2300</td></tr>
+				<tr><th scope="row">370</th><td>충북</td><td>청주시</td><td>청주성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-219-8000</td></tr>
+				<tr><th scope="row">371</th><td>충북</td><td>청주시</td><td>청원보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-201-3442</td></tr>
+				<tr><th scope="row">372</th><td>충북</td><td>청주시</td><td>흥덕보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-201-3342</td></tr>
+				<tr><th scope="row">373</th><td>충북</td><td>청주시</td><td>한마음의료재단 하나병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-230-6326</td></tr>
+				<tr><th scope="row">374</th><td>충북</td><td>청주시</td><td>베스티안병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-910-7575</td></tr>
+				<tr><th scope="row">375</th><td>충북</td><td>충주시</td><td>충주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-850-3431 </td></tr>
+				<tr><th scope="row">376</th><td>충북</td><td>충주시</td><td>충청북도 충주의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-871-0114</td></tr>
+				<tr><th scope="row">377</th><td>충북</td><td>충주시</td><td>건국대학교 충주병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>043-840-8200</td></tr>
+				<tr><th scope="row">378</th><td>충남</td><td>계룡시</td><td>계룡시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>042-840-3507</td></tr>
+				<tr><th scope="row">379</th><td>충남</td><td>공주시</td><td>충청남도공주의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-962-1111</td></tr>
+				<tr><th scope="row">380</th><td>충남</td><td>공주시</td><td>공주시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-840-2524</td></tr>
+				<tr><th scope="row">381</th><td>충남</td><td>금산군</td><td>새금산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-754-8272</td></tr>
+				<tr><th scope="row">382</th><td>충남</td><td>금산군</td><td>금산군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-750-4311</td></tr>
+				<tr><th scope="row">383</th><td>충남</td><td>논산시</td><td>백제종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-733-2191</td></tr>
+				<tr><th scope="row">384</th><td>충남</td><td>논산시</td><td>논산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-730-4086~7</td></tr>
+				<tr><th scope="row">385</th><td>충남</td><td>당진시</td><td>당진종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-357-0100</td></tr>
+				<tr><th scope="row">386</th><td>충남</td><td>당진시</td><td>당진시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-360-6003</td></tr>
+				<tr><th scope="row">387</th><td>충남</td><td>보령시</td><td>보령시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-930-0900</td></tr>
+				<tr><th scope="row">388</th><td>충남</td><td>보령시</td><td>보령아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-930-5333</td></tr>
+				<tr><th scope="row">389</th><td>충남</td><td>부여군</td><td>건양대학교 부여병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-837-1200</td></tr>
+				<tr><th scope="row">390</th><td>충남</td><td>부여군</td><td>부여군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-830-8600</td></tr>
+				<tr><th scope="row">391</th><td>충남</td><td>서산시</td><td>충청남도서산의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-689-7000</td></tr>
+				<tr><th scope="row">392</th><td>충남</td><td>서산시</td><td>서산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-661-8232</td></tr>
+				<tr><th scope="row">393</th><td>충남</td><td>서천군</td><td>서해병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-951-8282</td></tr>
+				<tr><th scope="row">394</th><td>충남</td><td>서천군</td><td>서천군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-950-6750</td></tr>
+				<tr><th scope="row">395</th><td>충남</td><td>아산시</td><td>아산충무병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-536-6666</td></tr>
+				<tr><th scope="row">396</th><td>충남</td><td>아산시</td><td>아산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-537-3311</td></tr>
+				<tr><th scope="row">397</th><td>충남</td><td>아산시</td><td>현대병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-546-3636</td></tr>
+				<tr><th scope="row">398</th><td>충남</td><td>예산군</td><td>의료법인 예당의료재단 예산종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-330-4000</td></tr>
+				<tr><th scope="row">399</th><td>충남</td><td>예산군</td><td>예산군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-339-6062</td></tr>
+				<tr><th scope="row">400</th><td>충남</td><td>천안시</td><td>천안시 동남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-521-2651</td></tr>
+				<tr><th scope="row">401</th><td>충남</td><td>천안시</td><td>학교법인동은학원 순천향대학교 부속천안병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>1577-7523</td></tr>
+				<tr><th scope="row">402</th><td>충남</td><td>천안시</td><td>의료법인영서의료재단 천안충무병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-570-7555</td></tr>
+				<tr><th scope="row">403</th><td>충남</td><td>천안시</td><td>충청남도천안의료원(소아청소년과 없음)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-570-7033</td></tr>
+				<tr><th scope="row">404</th><td>충남</td><td>천안시</td><td>천안우리병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-590-9000</td></tr>
+				<tr><th scope="row">405</th><td>충남</td><td>청양군</td><td>청양군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-942-3401</td></tr>
+				<tr><th scope="row">406</th><td>충남</td><td>태안군</td><td>태안군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-671-5315</td></tr>
+				<tr><th scope="row">407</th><td>충남</td><td>홍성군</td><td>충청남도 홍성의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-630-6114</td></tr>
+				<tr><th scope="row">408</th><td>충남</td><td>홍성군</td><td>홍성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>041-632-2588</td></tr>
+				<tr><th scope="row">409</th><td>전북</td><td>고창군</td><td>고창군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-560-8711</td></tr>
+				<tr><th scope="row">410</th><td>전북</td><td>고창군</td><td>(의)석천재단고창병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-560-5600</td></tr>
+				<tr><th scope="row">411</th><td>전북</td><td>군산시</td><td>군산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-460-3200</td></tr>
+				<tr><th scope="row">412</th><td>전북</td><td>군산시</td><td>군산의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-472-5000</td></tr>
+				<tr><th scope="row">413</th><td>전북</td><td>군산시</td><td>동군산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-440-0516</td></tr>
+				<tr><th scope="row">414</th><td>전북</td><td>김제시</td><td>김제우석병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-540-5114</td></tr>
+				<tr><th scope="row">415</th><td>전북</td><td>김제시</td><td>김제시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-540-1300</td></tr>
+				<tr><th scope="row">416</th><td>전북</td><td>남원시</td><td>남원의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-620-1114</td></tr>
+				<tr><th scope="row">417</th><td>전북</td><td>남원시</td><td>남원시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-625-4000</td></tr>
+				<tr><th scope="row">418</th><td>전북</td><td>무주군</td><td>무주군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-320-8314</td></tr>
+				<tr><th scope="row">419</th><td>전북</td><td>부안군</td><td>부안군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-584-1261</td></tr>
+				<tr><th scope="row">420</th><td>전북</td><td>부안군</td><td>부안성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-581-5100</td></tr>
+				<tr><th scope="row">421</th><td>전북</td><td>순창군</td><td>순창군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-650-5352</td></tr>
+				<tr><th scope="row">422</th><td>전북</td><td>완주군</td><td>완주군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-290-3133</td></tr>
+				<tr><th scope="row">423</th><td>전북</td><td>익산시</td><td>익산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-840-9112</td></tr>
+				<tr><th scope="row">424</th><td>전북</td><td>익산시</td><td>익산시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-859-4811</td></tr>
+				<tr><th scope="row">425</th><td>전북</td><td>임실군</td><td>임실군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-640-3119</td></tr>
+				<tr><th scope="row">426</th><td>전북</td><td>장수군</td><td>장수군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-350-2119</td></tr>
+				<tr><th scope="row">427</th><td>전북</td><td>전주시</td><td>예수병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-230-8282</td></tr>
+				<tr><th scope="row">428</th><td>전북</td><td>전주시</td><td>대자인병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-250-8703</td></tr>
+				<tr><th scope="row">429</th><td>전북</td><td>전주시</td><td>전주병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-220-7280</td></tr>
+				<tr><th scope="row">430</th><td>전북</td><td>전주시</td><td>전주시보건소(덕진진료실)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-250-3907</td></tr>
+				<tr><th scope="row">431</th><td>전북</td><td>전주시</td><td>호성전주병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-240-8894</td></tr>
+				<tr><th scope="row">432</th><td>전북</td><td>정읍시</td><td>정읍아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-530-6000</td></tr>
+				<tr><th scope="row">433</th><td>전북</td><td>정읍시</td><td>정읍시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-539-6112</td></tr>
+				<tr><th scope="row">434</th><td>전북</td><td>진안군</td><td>진안군의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-430-7000</td></tr>
+				<tr><th scope="row">435</th><td>전북</td><td>진안군</td><td>진안군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>063-430-8560</td></tr>
+				<tr><th scope="row">436</th><td>전남</td><td>강진군</td><td>강진의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-433-2167</td></tr>
+				<tr><th scope="row">437</th><td>전남</td><td>강진군</td><td>강진군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-430-3592</td></tr>
+				<tr><th scope="row">438</th><td>전남</td><td>고흥군</td><td>고흥종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-835-6000</td></tr>
+				<tr><th scope="row">439</th><td>전남</td><td>고흥군</td><td>고흥군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-830-6688</td></tr>
+				<tr><th scope="row">440</th><td>전남</td><td>고흥군</td><td>녹동현대병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-840-1200</td></tr>
+				<tr><th scope="row">441</th><td>전남</td><td>곡성군</td><td>곡성사랑병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-360-6000</td></tr>
+				<tr><th scope="row">442</th><td>전남</td><td>곡성군</td><td>곡성군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-360-7563</td></tr>
+				<tr><th scope="row">443</th><td>전남</td><td>광양시</td><td>광양사랑병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-797-7000</td></tr>
+				<tr><th scope="row">444</th><td>전남</td><td>광양시</td><td>광양시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-797-4015</td></tr>
+				<tr><th scope="row">445</th><td>전남</td><td>구례군</td><td>구례병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-780-3300</td></tr>
+				<tr><th scope="row">446</th><td>전남</td><td>구례군</td><td>구례군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-780-2673</td></tr>
+				<tr><th scope="row">447</th><td>전남</td><td>나주시</td><td>나주종합병원</td><td>061-330-6114</td></tr>
+				<tr><th scope="row">448</th><td>전남</td><td>나주시</td><td>나주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-339-2164</td></tr>
+				<tr><th scope="row">449</th><td>전남</td><td>나주시</td><td>빛가람동 선별진료소</td><td>061-339-2164</td></tr>
+				<tr><th scope="row">450</th><td>전남</td><td>나주시</td><td>산포면 선별진료소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-339-2164</td></tr>
+				<tr><th scope="row">451</th><td>전남</td><td>담양군</td><td>담양사랑병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-380-9000</td></tr>
+				<tr><th scope="row">452</th><td>전남</td><td>담양군</td><td>담양군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-380-3972</td></tr>
+				<tr><th scope="row">453</th><td>전남</td><td>목포시</td><td>목포한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-270-5800</td></tr>
+				<tr><th scope="row">454</th><td>전남</td><td>목포시</td><td>목포기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-280-7500</td></tr>
+				<tr><th scope="row">455</th><td>전남</td><td>목포시</td><td>목포중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-280-3000</td></tr>
+				<tr><th scope="row">456</th><td>전남</td><td>목포시</td><td>목포시의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-260-6500</td></tr>
+				<tr><th scope="row">457</th><td>전남</td><td>목포시</td><td>세안종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-260-6713</td></tr>
+				<tr><th scope="row">458</th><td>전남</td><td>목포시</td><td>전남중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-260-3555</td></tr>
+				<tr><th scope="row">459</th><td>전남</td><td>목포시</td><td>목포시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-277-4000</td></tr>
+				<tr><th scope="row">460</th><td>전남</td><td>무안군</td><td>대송의료재단 무안병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-450-3111</td></tr>
+				<tr><th scope="row">461</th><td>전남</td><td>무안군</td><td>무안군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-450-5021</td></tr>
+				<tr><th scope="row">462</th><td>전남</td><td>보성군</td><td>보성아산병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-850-3606</td></tr>
+				<tr><th scope="row">463</th><td>전남</td><td>보성군</td><td>보성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-850-5684</td></tr>
+				<tr><th scope="row">464</th><td>전남</td><td>보성군</td><td>벌교삼호병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-859-5051</td></tr>
+				<tr><th scope="row">465</th><td>전남</td><td>순천시</td><td>순천시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-749-6680</td></tr>
+				<tr><th scope="row">466</th><td>전남</td><td>순천시</td><td>순천 성가롤로병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-720-2000</td></tr>
+				<tr><th scope="row">467</th><td>전남</td><td>순천시</td><td>순천의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-759-9440</td></tr>
+				<tr><th scope="row">468</th><td>전남</td><td>순천시</td><td>순천 한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-740-5291</td></tr>
+				<tr><th scope="row">469</th><td>전남</td><td>순천시</td><td>순천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-720-7580</td></tr>
+				<tr><th scope="row">470</th><td>전남</td><td>신안군</td><td>신안군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-240-8084</td></tr>
+				<tr><th scope="row">471</th><td>전남</td><td>신안군</td><td>신안대우병원</td><td>061-262-3301</td></tr>
+				<tr><th scope="row">472</th><td>전남</td><td>여수시</td><td>여천전남병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-690-6000</td></tr>
+				<tr><th scope="row">473</th><td>전남</td><td>여수시</td><td>여수시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-659-4252</td></tr>
+				<tr><th scope="row">474</th><td>전남</td><td>여수시</td><td>여수전남병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-640-7118</td></tr>
+				<tr><th scope="row">475</th><td>전남</td><td>여수시</td><td>여수한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-689-9119</td></tr>
+				<tr><th scope="row">476</th><td>전남</td><td>여수시</td><td>여수제일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-689-8119</td></tr>
+				<tr><th scope="row">477</th><td>전남</td><td>영광군</td><td>영광종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-350-8119</td></tr>
+				<tr><th scope="row">478</th><td>전남</td><td>영광군</td><td>영광기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-350-3000</td></tr>
+				<tr><th scope="row">479</th><td>전남</td><td>영광군</td><td>영광군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-350-5552</td></tr>
+				<tr><th scope="row">480</th><td>전남</td><td>영암군</td><td>영암병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-470-7100</td></tr>
+				<tr><th scope="row">481</th><td>전남</td><td>영암군</td><td>영암군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-470-6536</td></tr>
+				<tr><th scope="row">482</th><td>전남</td><td>완도군</td><td>완도대성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-553-1234</td></tr>
+				<tr><th scope="row">483</th><td>전남</td><td>완도군</td><td>완도군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-550-6767</td></tr>
+				<tr><th scope="row">484</th><td>전남</td><td>장성군</td><td>장성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-390-9000</td></tr>
+				<tr><th scope="row">485</th><td>전남</td><td>장성군</td><td>장성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-390-8333</td></tr>
+				<tr><th scope="row">486</th><td>전남</td><td>장흥군</td><td>장흥종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-862-8300</td></tr>
+				<tr><th scope="row">487</th><td>전남</td><td>장흥군</td><td>장흥군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-860-6481</td></tr>
+				<tr><th scope="row">488</th><td>전남</td><td>진도군</td><td>진도한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-542-7575</td></tr>
+				<tr><th scope="row">489</th><td>전남</td><td>진도군</td><td>진도군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-540-6074</td></tr>
+				<tr><th scope="row">490</th><td>전남</td><td>함평군</td><td>함평성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-324-0001</td></tr>
+				<tr><th scope="row">491</th><td>전남</td><td>함평군</td><td>함평군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-320-2417</td></tr>
+				<tr><th scope="row">492</th><td>전남</td><td>해남군</td><td>해남종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-536-4116</td></tr>
+				<tr><th scope="row">493</th><td>전남</td><td>해남군</td><td>해남우리종합병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-530-7000</td></tr>
+				<tr><th scope="row">494</th><td>전남</td><td>해남군</td><td>해남군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-531-3745</td></tr>
+				<tr><th scope="row">495</th><td>전남</td><td>화순군</td><td>화순고려병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-370-3700</td></tr>
+				<tr><th scope="row">496</th><td>전남</td><td>화순군</td><td>화순전남대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-1899-0000</td></tr>
+				<tr><th scope="row">497</th><td>전남</td><td>화순군</td><td>화순성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-370-9114</td></tr>
+				<tr><th scope="row">498</th><td>전남</td><td>화순군</td><td>화순군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>061-379-5342</td></tr>
+				<tr><th scope="row">499</th><td>경북</td><td>경산시</td><td>세명병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-819-8500</td></tr>
+				<tr><th scope="row">500</th><td>경북</td><td>경산시</td><td>경산중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-715-0119</td></tr>
+				<tr><th scope="row">501</th><td>경북</td><td>경산시</td><td>경산시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>053-810-6314</td></tr>
+				<tr><th scope="row">502</th><td>경북</td><td>경주시</td><td>경주시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-779-8573</td></tr>
+				<tr><th scope="row">503</th><td>경북</td><td>경주시</td><td>경주시 주민건강지원센터<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-779-8668</td></tr>
+				<tr><th scope="row">504</th><td>경북</td><td>고령군</td><td>고령군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-954-1300</td></tr>
+				<tr><th scope="row">505</th><td>경북</td><td>고령군</td><td>고령영생병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-955-2661</td></tr>
+				<tr><th scope="row">506</th><td>경북</td><td>구미시</td><td>구미순천향병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-468-9114</td></tr>
+				<tr><th scope="row">507</th><td>경북</td><td>구미시</td><td>구미차병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-450-9700</td></tr>
+				<tr><th scope="row">508</th><td>경북</td><td>구미시</td><td>구미강동병원</td><td>054-453-7575</td></tr>
+				<tr><th scope="row">509</th><td>경북</td><td>구미시</td><td>구미시 구미보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-480-4032</td></tr>
+				<tr><th scope="row">510</th><td>경북</td><td>군위군 </td><td>군위군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-383-4000</td></tr>
+				<tr><th scope="row">511</th><td>경북</td><td>김천시</td><td>김천의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-432-8901</td></tr>
+				<tr><th scope="row">512</th><td>경북</td><td>김천시</td><td>김천제일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-420-9440</td></tr>
+				<tr><th scope="row">513</th><td>경북</td><td>김천시</td><td>김천시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-433-4000</td></tr>
+				<tr><th scope="row">514</th><td>경북</td><td>김천시</td><td>김천소년교도소 부속의원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-429-5575</td></tr>
+				<tr><th scope="row">515</th><td>경북</td><td>문경시</td><td>문경제일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-550-7700</td></tr>
+				<tr><th scope="row">516</th><td>경북</td><td>문경시</td><td>문경중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-555-2011</td></tr>
+				<tr><th scope="row">517</th><td>경북</td><td>문경시</td><td>문경시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-555-2033</td></tr>
+				<tr><th scope="row">518</th><td>경북</td><td>봉화군</td><td>봉화군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-673-4000</td></tr>
+				<tr><th scope="row">519</th><td>경북</td><td>봉화군</td><td>봉화해성병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-674-0011</td></tr>
+				<tr><th scope="row">520</th><td>경북</td><td>상주시</td><td>상주성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-532-5001</td></tr>
+				<tr><th scope="row">521</th><td>경북</td><td>상주시</td><td>상주시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-535-4000</td></tr>
+				<tr><th scope="row">522</th><td>경북</td><td>성주군</td><td>성주군보건소 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-933-2400</td></tr>
+				<tr><th scope="row">523</th><td>경북</td><td>안동시</td><td>안동시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-840-5999,5917</td></tr>
+				<tr><th scope="row">524</th><td>경북</td><td>안동시</td><td>안동의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-850-6055</td></tr>
+				<tr><th scope="row">525</th><td>경북</td><td>안동시</td><td>안동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-840-1004</td></tr>
+				<tr><th scope="row">526</th><td>경북</td><td>안동시</td><td>안동성소병원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-850-8114</td></tr>
+				<tr><th scope="row">527</th><td>경북</td><td>영덕군</td><td>영덕아산병원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-730-0114</td></tr>
+				<tr><th scope="row">528</th><td>경북</td><td>영덕군</td><td>영덕군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-730-6893</td></tr>
+				<tr><th scope="row">529</th><td>경북</td><td>영양군 </td><td>영양군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-680-5196</td></tr>
+				<tr><th scope="row">530</th><td>경북</td><td>영양군 </td><td>영양병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-682-0727</td></tr>
+				<tr><th scope="row">531</th><td>경북</td><td>영주시</td><td>영주시보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-631-4000</td></tr>
+				<tr><th scope="row">532</th><td>경북</td><td>영천시</td><td>영남대학교 영천병원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-338-9000</td></tr>
+				<tr><th scope="row">533</th><td>경북</td><td>영천시</td><td>영천시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-339-7860</td></tr>
+				<tr><th scope="row">534</th><td>경북</td><td>예천군</td><td>예천군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-650-8616</td></tr>
+				<tr><th scope="row">535</th><td>경북</td><td>예천군</td><td>예천권병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-654-6611</td></tr>
+				<tr><th scope="row">536</th><td>경북</td><td>울릉군</td><td>울릉군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-790-6871</td></tr>
+				<tr><th scope="row">537</th><td>경북</td><td>울진군 </td><td>울진군의료원 <i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-785-7015</td></tr>
+				<tr><th scope="row">538</th><td>경북</td><td>의성군 </td><td>의성군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-830-6660</td></tr>
+				<tr><th scope="row">539</th><td>경북</td><td>의성군 </td><td>공생병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-834-3881</td></tr>
+				<tr><th scope="row">540</th><td>경북</td><td>청도군</td><td>청도군보건소(치매안심센터)<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-370-6566, 2673</td></tr>
+				<tr><th scope="row">541</th><td>경북</td><td>청송군</td><td>청송군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-870-7100</td></tr>
+				<tr><th scope="row">542</th><td>경북</td><td>청송군</td><td>경북북부제2교도소 부속의원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-870-2575</td></tr>
+				<tr><th scope="row">543</th><td>경북</td><td>칠곡군 </td><td>칠곡군보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-973-4000</td></tr>
+				<tr><th scope="row">544</th><td>경북</td><td>칠곡군 </td><td>왜관병원</td><td>054-971-1002</td></tr>
+				<tr><th scope="row">545</th><td>경북</td><td>포항시</td><td>포항시 북구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-270-4114</td></tr>
+				<tr><th scope="row">546</th><td>경북</td><td>포항시</td><td>포항시 남구보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-270-4004</td></tr>
+				<tr><th scope="row">547</th><td>경북</td><td>포항시</td><td>포항세명 기독병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-275-0005</td></tr>
+				<tr><th scope="row">548</th><td>경북</td><td>포항시</td><td>포항 성모병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-272-0151</td></tr>
+				<tr><th scope="row">549</th><td>경북</td><td>포항시</td><td>포항의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>054-247-0551</td></tr>
+				<tr><th scope="row">550</th><td>경남</td><td>거제시 </td><td>의료법인 거붕백병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-733-0119</td></tr>
+				<tr><th scope="row">551</th><td>경남</td><td>거제시 </td><td>의료법인 대우병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-680-8119</td></tr>
+				<tr><th scope="row">552</th><td>경남</td><td>거제시 </td><td>거제시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-639-6133</td></tr>
+				<tr><th scope="row">553</th><td>경남</td><td>거제시 </td><td>맑은샘병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-736-1004</td></tr>
+				<tr><th scope="row">554</th><td>경남</td><td>거창군 </td><td>거창적십자병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-944-3251</td></tr>
+				<tr><th scope="row">555</th><td>경남</td><td>거창군 </td><td>거창군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-940-8337</td></tr>
+				<tr><th scope="row">556</th><td>경남</td><td>고성군 </td><td>고성군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-670-4013</td></tr>
+				<tr><th scope="row">557</th><td>경남</td><td>김해시</td><td>김해중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-330-6007</td></tr>
+				<tr><th scope="row">558</th><td>경남</td><td>김해시</td><td>조은금강병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-330-0300</td></tr>
+				<tr><th scope="row">559</th><td>경남</td><td>김해시</td><td>갑을장유병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-310-6114</td></tr>
+				<tr><th scope="row">560</th><td>경남</td><td>김해시</td><td>김해시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-330-4483</td></tr>
+				<tr><th scope="row">561</th><td>경남</td><td>남해군 </td><td>의료법인이도의료 재단 남해병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-863-2201</td></tr>
+				<tr><th scope="row">562</th><td>경남</td><td>남해군 </td><td>남해군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-860-8730</td></tr>
+				<tr><th scope="row">563</th><td>경남</td><td>밀양시 </td><td>밀양 윤병원</td><td>055-354-2200</td></tr>
+				<tr><th scope="row">564</th><td>경남</td><td>밀양시 </td><td>밀양시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-359-7015</td></tr>
+				<tr><th scope="row">565</th><td>경남</td><td>사천시</td><td>삼천포서울병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-835-9018</td></tr>
+				<tr><th scope="row">566</th><td>경남</td><td>사천시</td><td>사천시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-831-3620</td></tr>
+				<tr><th scope="row">567</th><td>경남</td><td>사천시</td><td>의료법인승연의료재단 제일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-833-4400</td></tr>
+				<tr><th scope="row">568</th><td>경남</td><td>산청군</td><td>산청군보건의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-970-7500</td></tr>
+				<tr><th scope="row">569</th><td>경남</td><td>양산시 </td><td>양산부산대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-360-1476</td></tr>
+				<tr><th scope="row">570</th><td>경남</td><td>양산시 </td><td>베데스다 병원</td><td>055-384-9911</td></tr>
+				<tr><th scope="row">571</th><td>경남</td><td>양산시 </td><td>웅상중앙병원</td><td>055-912-1032</td></tr>
+				<tr><th scope="row">572</th><td>경남</td><td>양산시 </td><td>양산시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-392-5220</td></tr>
+				<tr><th scope="row">573</th><td>경남</td><td>의령군 </td><td>의령병원</td><td>055-573-4100</td></tr>
+				<tr><th scope="row">574</th><td>경남</td><td>의령군 </td><td>의령군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-570-4045</td></tr>
+				<tr><th scope="row">575</th><td>경남</td><td>진주시</td><td>진주제일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-756-2900</td></tr>
+				<tr><th scope="row">576</th><td>경남</td><td>진주시</td><td>진주고려병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-751-2525</td></tr>
+				<tr><th scope="row">577</th><td>경남</td><td>진주시</td><td>진주반도병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-749-0679</td></tr>
+				<tr><th scope="row">578</th><td>경남</td><td>진주시</td><td>진주복음병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-749-7119</td></tr>
+				<tr><th scope="row">579</th><td>경남</td><td>진주시</td><td>진주세란병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-760-7575</td></tr>
+				<tr><th scope="row">580</th><td>경남</td><td>진주시</td><td>진주한일병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-750-1333</td></tr>
+				<tr><th scope="row">581</th><td>경남</td><td>진주시</td><td>진주시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-749-5714</td></tr>
+				<tr><th scope="row">582</th><td>경남</td><td>창녕군</td><td>태황의료재단 한성병원</td><td>055-530-5000</td></tr>
+				<tr><th scope="row">583</th><td>경남</td><td>창녕군</td><td>창녕군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-530-6217</td></tr>
+				<tr><th scope="row">584</th><td>경남</td><td>창원시</td><td>창원시 창원보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-225-5744</td></tr>
+				<tr><th scope="row">585</th><td>경남</td><td>창원시</td><td>SMG연세병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-240-7777</td></tr>
+				<tr><th scope="row">586</th><td>경남</td><td>창원시</td><td>창원시 마산보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-225-5944</td></tr>
+				<tr><th scope="row">587</th><td>경남</td><td>창원시</td><td>창원시 진해보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-225-6123</td></tr>
+				<tr><th scope="row">588</th><td>경남</td><td>창원시</td><td>연세에스병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-548-7700</td></tr>
+				<tr><th scope="row">589</th><td>경남</td><td>창원시</td><td>세광병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-540-3700</td></tr>
+				<tr><th scope="row">590</th><td>경남</td><td>창원시</td><td>삼성창원병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-233-6121</td></tr>
+				<tr><th scope="row">591</th><td>경남</td><td>창원시</td><td>마산의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-249-1116</td></tr>
+				<tr><th scope="row">592</th><td>경남</td><td>창원시</td><td>창원경상대학교병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>(주)055-214-1000, (야)055-214-2119</td></tr>
+				<tr><th scope="row">593</th><td>경남</td><td>창원시</td><td>한마음창원병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-267-2000</td></tr>
+				<tr><th scope="row">594</th><td>경남</td><td>창원시</td><td>창원병원</td><td>055-280-7777</td></tr>
+				<tr><th scope="row">595</th><td>경남</td><td>창원시</td><td>창원파티마병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-270-1020</td></tr>
+				<tr><th scope="row">596</th><td>경남</td><td>통영시 </td><td>통영적십자병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-644-8901</td></tr>
+				<tr><th scope="row">597</th><td>경남</td><td>통영시 </td><td>통영시 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-650-6050</td></tr>
+				<tr><th scope="row">598</th><td>경남</td><td>하동군 </td><td>새하동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-880-4200</td></tr>
+				<tr><th scope="row">599</th><td>경남</td><td>하동군 </td><td>하동군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-882-4000</td></tr>
+				<tr><th scope="row">600</th><td>경남</td><td>함안군</td><td>영동병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-586-2000</td></tr>
+				<tr><th scope="row">601</th><td>경남</td><td>함안군</td><td>함안군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-580-3113</td></tr>
+				<tr><th scope="row">602</th><td>경남</td><td>함양군 </td><td>함양성심병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-963-4322</td></tr>
+				<tr><th scope="row">603</th><td>경남</td><td>함양군 </td><td>함양군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-960-5334</td></tr>
+				<tr><th scope="row">604</th><td>경남</td><td>합천군 </td><td>삼성합천병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-933-3322</td></tr>
+				<tr><th scope="row">605</th><td>경남</td><td>합천군 </td><td>합천군 보건소<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>055-930-3683</td></tr>
+				<tr><th scope="row">606</th><td>제주</td><td>서귀포</td><td>서귀포의료원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-730-3000</td></tr>
+				<tr><th scope="row">607</th><td>제주</td><td>서귀포</td><td>서귀포열린병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-762-8001</td></tr>
+				<tr><th scope="row">608</th><td>제주</td><td>제주시</td><td>제주한라병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-740-5975</td></tr>
+				<tr><th scope="row">609</th><td>제주</td><td>제주시</td><td>한마음병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-750-9119</td></tr>
+				<tr><th scope="row">610</th><td>제주</td><td>제주시</td><td>한국병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-750-0119</td></tr>
+				<tr><th scope="row">611</th><td>제주</td><td>제주시</td><td>중앙병원<i class="ico_ntc">	*<span class="hdn">(검체채취 가능)</span></i></td><td>064-786-7000</td></tr> 				
+				<tr><th scope="row">1</th><td>서울</td><td>강남구</td><td>연세대학교강남세브란스병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2019-2114">02-2019-2114	</a></td></tr>
+				<tr><th scope="row">2</th><td>서울</td><td>강남구</td><td>강남차병원</td><td>외래진료</td><td><a href="tel:02-3468-3000">02-3468-3000	</a></td></tr>
+				<tr><th scope="row">3</th><td>서울</td><td>강남구</td><td>강남베드로병원</td><td>외래진료</td><td><a href="tel:02-1544-7522">02-1544-7522	</a></td></tr>
+				<tr><th scope="row">4</th><td>서울</td><td>강남구</td><td>나누리병원</td><td>외래진료</td><td><a href="tel:1688-9797">1688-9797	</a></td></tr>
+				<tr><th scope="row">5</th><td>서울</td><td>강남구</td><td>하나이비인후과병원</td><td>외래진료</td><td><a href="tel:02-6925-1111">02-6925-1111	</a></td></tr>
+				<tr><th scope="row">6</th><td>서울</td><td>강남구</td><td>자생한방병원</td><td>외래진료</td><td><a href="tel:1577-0007">1577-0007	</a></td></tr>
+				<tr><th scope="row">7</th><td>서울</td><td>강동구</td><td>중앙보훈병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2225-1111">02-2225-1111	</a></td></tr>
+				<tr><th scope="row">8</th><td>서울</td><td>강동구</td><td>강동성심병원</td><td>외래진료</td><td><a href="tel:1588-4100">1588-4100	</a></td></tr>
+				<tr><th scope="row">9</th><td>서울</td><td>강동구</td><td>강동경희대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-440-8114">02-440-8114	</a></td></tr>
+				<tr><th scope="row">10</th><td>서울</td><td>강서구</td><td>이화여자대학교서울병원</td><td>외래진료 및 입원</td><td><a href="tel:1522-7000">1522-7000	</a></td></tr>
+				<tr><th scope="row">11</th><td>서울</td><td>강서구</td><td>나누리병원</td><td>외래진료</td><td><a href="tel:1688-9797">1688-9797	</a></td></tr>
+				<tr><th scope="row">12</th><td>서울</td><td>관악구</td><td>에이치플러스양지병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1877-8875">02-1877-8875	</a></td></tr>
+				<tr><th scope="row">13</th><td>서울</td><td>관악구</td><td>심정병원</td><td>외래진료</td><td><a href="tel:02-1588-3330">02-1588-3330	</a></td></tr>
+				<tr><th scope="row">14</th><td>서울</td><td>광진구</td><td>건국대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1588-1533">02-1588-1533	</a></td></tr>
+				<tr><th scope="row">15</th><td>서울</td><td>광진구</td><td>혜민병원</td><td>외래진료</td><td><a href="tel:02-2049-9000">02-2049-9000	</a></td></tr>
+				<tr><th scope="row">16</th><td>서울</td><td>구로구</td><td>고려대학교구로병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2626-1114">02-2626-1114	</a></td></tr>
+				<tr><th scope="row">17</th><td>서울</td><td>구로구</td><td>구로성심병원</td><td>외래진료</td><td><a href="tel:02-2067-1500">02-2067-1500	</a></td></tr>
+				<tr><th scope="row">18</th><td>서울</td><td>구로구</td><td>우리아이들병원</td><td>외래진료</td><td><a href="tel:02-858-0100">02-858-0100	</a></td></tr>
+				<tr><th scope="row">19</th><td>서울</td><td>금천구</td><td>희명병원</td><td>외래진료 및 입원</td><td><a href="tel:02-804-0002">02-804-0002	</a></td></tr>
+				<tr><th scope="row">20</th><td>서울</td><td>노원구</td><td>인제대학교 상계백병원</td><td>외래진료</td><td><a href="tel:02-950-1114">02-950-1114	</a></td></tr>
+				<tr><th scope="row">21</th><td>서울</td><td>노원구</td><td>노원을지대학교병원</td><td>외래진료</td><td><a href="tel:02-970-8000">02-970-8000	</a></td></tr>
+				<tr><th scope="row">22</th><td>서울</td><td>노원구</td><td>한국원자력의학원원자력병원</td><td>외래진료</td><td><a href="tel:02-970-2114">02-970-2114	</a></td></tr>
+				<tr><th scope="row">23</th><td>서울</td><td>도봉구</td><td>한일병원</td><td>외래진료 및 입원</td><td><a href="tel:02-901-3114">02-901-3114	</a></td></tr>
+				<tr><th scope="row">24</th><td>서울</td><td>동대문구</td><td>삼육서울병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1577-3675">02-1577-3675	</a></td></tr>
+				<tr><th scope="row">25</th><td>서울</td><td>동대문구</td><td>경희대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-958-8114">02-958-8114	</a></td></tr>
+				<tr><th scope="row">26</th><td>서울</td><td>동대문구</td><td>서울성심병원</td><td>외래진료</td><td><a href="tel:02-966-1616">02-966-1616	</a></td></tr>
+				<tr><th scope="row">27</th><td>서울</td><td>동대문구</td><td>코리아병원</td><td>외래진료</td><td><a href="tel:02-2281-9999">02-2281-9999	</a></td></tr>
+				<tr><th scope="row">28</th><td>서울</td><td>동작구</td><td>중앙대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-6299-1114">02-6299-1114	</a></td></tr>
+				<tr><th scope="row">29</th><td>서울</td><td>동작구</td><td>서울특별시보라매병원</td><td>외래진료</td><td><a href="tel:02-870-2114">02-870-2114	</a></td></tr>
+				<tr><th scope="row">30</th><td>서울</td><td>동작구</td><td>더본병원</td><td>외래진료</td><td><a href="tel:02-587-2299">02-587-2299	</a></td></tr>
+				<tr><th scope="row">31</th><td>서울</td><td>서대문구</td><td>연세대학교신촌세브란스병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1599-1004">02-1599-1004	</a></td></tr>
+				<tr><th scope="row">32</th><td>서울</td><td>서대문구</td><td>동신병원</td><td>외래진료</td><td><a href="tel:02-396-9161">02-396-9161	</a></td></tr>
+				<tr><th scope="row">33</th><td>서울</td><td>서초구</td><td>가톨릭대학교 서울성모병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1588-1511">02-1588-1511	</a></td></tr>
+				<tr><th scope="row">34</th><td>서울</td><td>성동구</td><td>한양대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2290-8114">02-2290-8114	</a></td></tr>
+				<tr><th scope="row">35</th><td>서울</td><td>성북구</td><td>고려대학교안암병원</td><td>외래진료 및 입원</td><td><a href="tel:02-920-5114">02-920-5114	</a></td></tr>
+				<tr><th scope="row">36</th><td>서울</td><td>성북구</td><td>서울척병원</td><td>외래진료</td><td><a href="tel:1599-0033">1599-0033	</a></td></tr>
+				<tr><th scope="row">37</th><td>서울</td><td>성북구</td><td>성북우리아이들병원</td><td>외래진료</td><td><a href="tel:02-912-0100">02-912-0100	</a></td></tr>
+				<tr><th scope="row">38</th><td>서울</td><td>송파구</td><td>경찰병원</td><td>외래진료</td><td><a href="tel:02-3400-1114">02-3400-1114	</a></td></tr>
+				<tr><th scope="row">39</th><td>서울</td><td>송파구</td><td>한솔병원</td><td>외래진료</td><td><a href="tel:02-2147-6000">02-2147-6000	</a></td></tr>
+				<tr><th scope="row">40</th><td>서울</td><td>양천구</td><td>이화여자대학교목동병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2650-5114">02-2650-5114	</a></td></tr>
+				<tr><th scope="row">41</th><td>서울</td><td>양천구</td><td>홍익병원</td><td>외래진료</td><td><a href="tel:02-2693-5555">02-2693-5555	</a></td></tr>
+				<tr><th scope="row">42</th><td>서울</td><td>양천구</td><td>메디힐병원</td><td>외래진료</td><td><a href="tel:02-2604-7551">02-2604-7551	</a></td></tr>
+				<tr><th scope="row">43</th><td>서울</td><td>영등포구</td><td>가톨릭대학교 여의도성모병원</td><td>외래진료 및 입원</td><td><a href="tel:1661-7575">1661-7575	</a></td></tr>
+				<tr><th scope="row">44</th><td>서울</td><td>영등포구</td><td>한림대학교 강남성심병원</td><td>외래진료 및 입원</td><td><a href="tel:02-829-5114">02-829-5114	</a></td></tr>
+				<tr><th scope="row">45</th><td>서울</td><td>영등포구</td><td>성애병원</td><td>외래진료</td><td><a href="tel:1811-8114">1811-8114	</a></td></tr>
+				<tr><th scope="row">46</th><td>서울</td><td>영등포구</td><td>명지성모병원</td><td>외래진료</td><td><a href="tel:1899-1475">1899-1475	</a></td></tr>
+				<tr><th scope="row">47</th><td>서울</td><td>영등포구</td><td>영등포병원</td><td>외래진료</td><td><a href="tel:02-2632-0013~8">02-2632-0013~8	</a></td></tr>
+				<tr><th scope="row">48</th><td>서울</td><td>영등포구</td><td>새길병원</td><td>외래진료</td><td><a href="tel:02-1522-0075">02-1522-0075	</a></td></tr>
+				<tr><th scope="row">49</th><td>서울</td><td>용산구</td><td>순천향대학교부속서울병원</td><td>외래진료 및 입원</td><td><a href="tel:02-709-9114">02-709-9114	</a></td></tr>
+				<tr><th scope="row">50</th><td>서울</td><td>은평구</td><td>은평성모병원</td><td>외래진료 및 입원</td><td><a href="tel:1811-7755">1811-7755	</a></td></tr>
+				<tr><th scope="row">51</th><td>서울</td><td>은평구</td><td>청구성심병원</td><td>외래진료</td><td><a href="tel:02-353-5511~9">02-353-5511~9	</a></td></tr>
+				<tr><th scope="row">52</th><td>서울</td><td>은평구</td><td>본서부병원</td><td>외래진료</td><td><a href="tel:02-3156-5000">02-3156-5000	</a></td></tr>
+				<tr><th scope="row">53</th><td>서울</td><td>종로구</td><td>서울대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:02-1588-5700">02-1588-5700	</a></td></tr>
+				<tr><th scope="row">54</th><td>서울</td><td>종로구</td><td>강북삼성병원</td><td>외래진료 및 입원</td><td><a href="tel:02-2001-2001">02-2001-2001	</a></td></tr>
+				<tr><th scope="row">55</th><td>서울</td><td>종로구</td><td>서울적십자병원</td><td>외래진료</td><td><a href="tel:02-2002-8000">02-2002-8000	</a></td></tr>
+				<tr><th scope="row">56</th><td>서울</td><td>종로구</td><td>세란병원</td><td>외래진료</td><td><a href="tel:02-737-0181">02-737-0181	</a></td></tr>
+				<tr><th scope="row">57</th><td>서울</td><td>중구</td><td>인제대학교 서울백병원</td><td>외래진료</td><td><a href="tel:02-2270-0114">02-2270-0114	</a></td></tr>
+				<tr><th scope="row">58</th><td>서울</td><td>중구</td><td>국립중앙의료원</td><td>외래진료 및 입원</td><td><a href="tel:02-2260-7114">02-2260-7114	</a></td></tr>
+				<tr><th scope="row">59</th><td>서울</td><td>중랑구</td><td>동부제일병원</td><td>외래진료</td><td><a href="tel:02-437-5011">02-437-5011	</a></td></tr>
+				<tr><th scope="row">60</th><td>서울</td><td>중랑구</td><td>녹색병원</td><td>외래진료</td><td><a href="tel:02-490-2000">02-490-2000	</a></td></tr>
+				<tr><th scope="row">61</th><td>부산</td><td>강서구</td><td>갑을녹산병원</td><td>외래진료</td><td><a href="tel:051-974-8300">051-974-8300	</a></td></tr>
+				<tr><th scope="row">62</th><td>부산</td><td>금정구</td><td>세웅병원</td><td>외래진료</td><td><a href="tel:051-500-9700">051-500-9700	</a></td></tr>
+				<tr><th scope="row">63</th><td>부산</td><td>기장군</td><td>동남권원자력의학원</td><td>외래진료</td><td><a href="tel:051-720-5114">051-720-5114	</a></td></tr>
+				<tr><th scope="row">64</th><td>부산</td><td>기장군</td><td>기장병원</td><td>외래진료</td><td><a href="tel:051-723-0171">051-723-0171	</a></td></tr>
+				<tr><th scope="row">65</th><td>부산</td><td>남구</td><td>부산성모병원</td><td>외래진료</td><td><a href="tel:051-933-7114">051-933-7114	</a></td></tr>
+				<tr><th scope="row">66</th><td>부산</td><td>남구</td><td>부산고려병원</td><td>외래진료</td><td><a href="tel:051-930-3000">051-930-3000	</a></td></tr>
+				<tr><th scope="row">67</th><td>부산</td><td>동구</td><td>일신기독병원</td><td>외래진료</td><td><a href="tel:051-630-0300">051-630-0300	</a></td></tr>
+				<tr><th scope="row">68</th><td>부산</td><td>동구</td><td>김원묵기념봉생병원</td><td>외래진료</td><td><a href="tel:051-664-4000">051-664-4000	</a></td></tr>
+				<tr><th scope="row">69</th><td>부산</td><td>동구</td><td>좋은문화병원</td><td>외래진료</td><td><a href="tel:051-644-2002">051-644-2002	</a></td></tr>
+				<tr><th scope="row">70</th><td>부산</td><td>동래구</td><td>대동병원</td><td>외래진료 및 입원</td><td><a href="tel:051-554-1233">051-554-1233	</a></td></tr>
+				<tr><th scope="row">71</th><td>부산</td><td>동래구</td><td>광혜병원</td><td>외래진료</td><td><a href="tel:051-503-2111">051-503-2111	</a></td></tr>
+				<tr><th scope="row">72</th><td>부산</td><td>동래구</td><td>동래봉생병원</td><td>외래진료</td><td><a href="tel:051-520-5500">051-520-5500	</a></td></tr>
+				<tr><th scope="row">73</th><td>부산</td><td>동래구</td><td>부산우리들병원</td><td>외래진료</td><td><a href="tel:051-559-2000">051-559-2000	</a></td></tr>
+				<tr><th scope="row">74</th><td>부산</td><td>북구</td><td>부민병원</td><td>외래진료</td><td><a href="tel:051-330-3000">051-330-3000	</a></td></tr>
+				<tr><th scope="row">75</th><td>부산</td><td>북구</td><td>구포성심병원</td><td>외래진료</td><td><a href="tel:051-333-2001">051-333-2001	</a></td></tr>
+				<tr><th scope="row">76</th><td>부산</td><td>북구</td><td>화명일신기독병원</td><td>외래진료</td><td><a href="tel:051-363-0387">051-363-0387	</a></td></tr>
+				<tr><th scope="row">77</th><td>부산</td><td>사상구</td><td>좋은삼선병원</td><td>외래진료</td><td><a href="tel:051-322-0900">051-322-0900	</a></td></tr>
+				<tr><th scope="row">78</th><td>부산</td><td>사상구</td><td>서부산센텀병원</td><td>외래진료</td><td><a href="tel:1644-5530 ">1644-5530 	</a></td></tr>
+				<tr><th scope="row">79</th><td>부산</td><td>서구</td><td>부산대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:051-240-7000">051-240-7000	</a></td></tr>
+				<tr><th scope="row">80</th><td>부산</td><td>서구</td><td>삼육부산병원</td><td>외래진료</td><td><a href="tel:051-242-9751">051-242-9751	</a></td></tr>
+				<tr><th scope="row">81</th><td>부산</td><td>서구</td><td>동아대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:051-240-2000">051-240-2000	</a></td></tr>
+				<tr><th scope="row">82</th><td>부산</td><td>수영구</td><td>BHS한서병원</td><td>외래진료</td><td><a href="tel:051-756-0081">051-756-0081	</a></td></tr>
+				<tr><th scope="row">83</th><td>부산</td><td>수영구</td><td>좋은강안병원</td><td>외래진료</td><td><a href="tel:051-625-0900">051-625-0900	</a></td></tr>
+				<tr><th scope="row">84</th><td>부산</td><td>수영구</td><td>부산센텀병원</td><td>외래진료</td><td><a href="tel:051-750-5000">051-750-5000	</a></td></tr>
+				<tr><th scope="row">85</th><td>부산</td><td>연제구</td><td>한양류마디병원</td><td>외래진료</td><td><a href="tel:051-752-1990">051-752-1990	</a></td></tr>
+				<tr><th scope="row">86</th><td>부산</td><td>영도구</td><td>해동병원</td><td>외래진료</td><td><a href="tel:051-412-6161">051-412-6161	</a></td></tr>
+				<tr><th scope="row">87</th><td>부산</td><td>영도구</td><td>영도병원</td><td>외래진료</td><td><a href="tel:051-412-8881">051-412-8881	</a></td></tr>
+				<tr><th scope="row">88</th><td>부산</td><td>영도구</td><td>에스병원</td><td>외래진료</td><td><a href="tel:051-412-7000">051-412-7000	</a></td></tr>
+				<tr><th scope="row">89</th><td>부산</td><td>진구</td><td>온종합병원</td><td>외래진료</td><td><a href="tel:051-607-0114">051-607-0114	</a></td></tr>
+				<tr><th scope="row">90</th><td>부산</td><td>진구</td><td>오성병원</td><td>외래진료</td><td><a href="tel:051-850-0800">051-850-0800	</a></td></tr>
+				<tr><th scope="row">91</th><td>부산</td><td>해운대구</td><td>인제대학교 해운대백병원</td><td>외래진료 및 입원</td><td><a href="tel:051-797-0100">051-797-0100	</a></td></tr>
+				<tr><th scope="row">92</th><td>부산</td><td>해운대구</td><td>해운대부민병원</td><td>외래진료 및 입원</td><td><a href="tel:051-602-8000">051-602-8000	</a></td></tr>
+				<tr><th scope="row">93</th><td>부산</td><td>해운대구</td><td>효성시티병원</td><td>외래진료</td><td><a href="tel:051-709-3000">051-709-3000	</a></td></tr>
+				<tr><th scope="row">94</th><td>인천</td><td>강화군</td><td>비에스종합병원</td><td>외래진료</td><td><a href="tel:032-290-0001">032-290-0001	</a></td></tr>
+				<tr><th scope="row">95</th><td>인천</td><td>계양구</td><td>한림병원</td><td>외래진료 및 입원</td><td><a href="tel:032-540-9114">032-540-9114	</a></td></tr>
+				<tr><th scope="row">96</th><td>인천</td><td>계양구</td><td>메디플렉스 세종병원</td><td>외래진료 및 입원</td><td><a href="tel:032-240-8000">032-240-8000	</a></td></tr>
+				<tr><th scope="row">97</th><td>인천</td><td>계양구</td><td>더드림병원</td><td>외래진료</td><td><a href="tel:032-282-7575">032-282-7575	</a></td></tr>
+				<tr><th scope="row">98</th><td>인천</td><td>남동구</td><td>길병원</td><td>외래진료 및 입원</td><td><a href="tel:032-460-3114">032-460-3114	</a></td></tr>
+				<tr><th scope="row">99</th><td>인천</td><td>동구</td><td>인천광역시의료원</td><td>외래진료</td><td><a href="tel:032-580-6000">032-580-6000	</a></td></tr>
+				<tr><th scope="row">100</th><td>인천</td><td>동구</td><td>인천백병원</td><td>외래진료</td><td><a href="tel:032-765-7070">032-765-7070	</a></td></tr>
+				<tr><th scope="row">101</th><td>인천</td><td>미추홀구</td><td>인천사랑병원</td><td>외래진료</td><td><a href="tel:032-457-2000">032-457-2000	</a></td></tr>
+				<tr><th scope="row">102</th><td>인천</td><td>미추홀구</td><td>현대유비스병원</td><td>외래진료</td><td><a href="tel:032-888-7575">032-888-7575	</a></td></tr>
+				<tr><th scope="row">103</th><td>인천</td><td>미추홀구</td><td>나누리병원</td><td>외래진료</td><td><a href="tel:1688-9797">1688-9797	</a></td></tr>
+				<tr><th scope="row">104</th><td>인천</td><td>미추홀구</td><td>성모윌병원</td><td>외래진료</td><td><a href="tel:032-421-0075">032-421-0075	</a></td></tr>
+				<tr><th scope="row">105</th><td>인천</td><td>부평구</td><td>가톨릭대학교 인천성모병원</td><td>외래진료 및 입원</td><td><a href="tel:032-1544-9004">032-1544-9004	</a></td></tr>
+				<tr><th scope="row">106</th><td>인천</td><td>부평구</td><td>부평세림병원</td><td>외래진료</td><td><a href="tel:032-524-0591">032-524-0591	</a></td></tr>
+				<tr><th scope="row">107</th><td>인천</td><td>부평구</td><td>한길안과병원</td><td>외래진료</td><td><a href="tel:032-503-3322">032-503-3322	</a></td></tr>
+				<tr><th scope="row">108</th><td>인천</td><td>부평구</td><td>나누리병원</td><td>외래진료</td><td><a href="tel:1688-9797">1688-9797	</a></td></tr>
+				<tr><th scope="row">109</th><td>인천</td><td>서구</td><td>뉴성민병원</td><td>외래진료</td><td><a href="tel:032-726-1000">032-726-1000	</a></td></tr>
+				<tr><th scope="row">110</th><td>인천</td><td>서구</td><td>나은병원</td><td>외래진료 및 입원</td><td><a href="tel:032-584-0114">032-584-0114	</a></td></tr>
+				<tr><th scope="row">111</th><td>인천</td><td>서구</td><td>검단탑병원</td><td>외래진료 및 입원</td><td><a href="tel:032-590-0114">032-590-0114	</a></td></tr>
+				<tr><th scope="row">112</th><td>인천</td><td>서구</td><td>온누리병원</td><td>외래진료</td><td><a href="tel:032-567-6200">032-567-6200	</a></td></tr>
+				<tr><th scope="row">113</th><td>인천</td><td>서구</td><td>가톨릭관동대학교 국제성모병원</td><td>외래진료 및 입원</td><td><a href="tel:1600-8291 ">1600-8291 	</a></td></tr>
+				<tr><th scope="row">114</th><td>인천</td><td>연수구</td><td>나사렛국제병원</td><td>외래진료 및 입원</td><td><a href="tel:032-899-9999">032-899-9999	</a></td></tr>
+				<tr><th scope="row">115</th><td>인천</td><td>연수구</td><td>인천적십자병원</td><td>외래진료</td><td><a href="tel:032-899-4000">032-899-4000	</a></td></tr>
+				<tr><th scope="row">116</th><td>인천</td><td>중구</td><td>인천기독병원</td><td>외래진료</td><td><a href="tel:032-270-8000">032-270-8000	</a></td></tr>
+				<tr><th scope="row">117</th><td>인천</td><td>중구</td><td>인하대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:032-890-2114">032-890-2114	</a></td></tr>
+				<tr><th scope="row">118</th><td>대구</td><td>남구</td><td>영남대학교병원</td><td>외래진료</td><td><a href="tel:053-623-8001">053-623-8001	</a></td></tr>
+				<tr><th scope="row">119</th><td>대구</td><td>남구</td><td>드림병원</td><td>외래진료 및 입원</td><td><a href="tel:053-640-8800">053-640-8800	</a></td></tr>
+				<tr><th scope="row">120</th><td>대구</td><td>달서구</td><td>구병원</td><td>외래진료</td><td><a href="tel:053-560-9114">053-560-9114	</a></td></tr>
+				<tr><th scope="row">121</th><td>대구</td><td>달서구</td><td>삼일병원</td><td>외래진료 및 입원</td><td><a href="tel:053-659-3100">053-659-3100	</a></td></tr>
+				<tr><th scope="row">122</th><td>대구</td><td>달서구</td><td>W병원</td><td>외래진료</td><td><a href="tel:053-550-5000">053-550-5000	</a></td></tr>
+				<tr><th scope="row">123</th><td>대구</td><td>달서구</td><td>대구보광병원</td><td>외래진료</td><td><a href="tel:053-651-3232">053-651-3232	</a></td></tr>
+				<tr><th scope="row">124</th><td>대구</td><td>달서구</td><td>참조은병원</td><td>외래진료</td><td><a href="tel:053-630-8000 ">053-630-8000 	</a></td></tr>
+				<tr><th scope="row">125</th><td>대구</td><td>달서구</td><td>세강병원</td><td>외래진료</td><td><a href="tel:053-620-6248">053-620-6248	</a></td></tr>
+				<tr><th scope="row">126</th><td>대구</td><td>동구</td><td>대구파티마병원</td><td>외래진료 및 입원</td><td><a href="tel:053-1688-7770">053-1688-7770	</a></td></tr>
+				<tr><th scope="row">127</th><td>대구</td><td>북구</td><td>대구가톨릭대학교칠곡가톨릭병원</td><td>외래진료</td><td><a href="tel:053-320-2500">053-320-2500	</a></td></tr>
+				<tr><th scope="row">128</th><td>대구</td><td>북구</td><td>대구시티병원</td><td>외래진료</td><td><a href="tel:053-959-7114">053-959-7114	</a></td></tr>
+				<tr><th scope="row">129</th><td>대구</td><td>서구</td><td>서대구병원</td><td>외래진료</td><td><a href="tel:053-558-5800">053-558-5800	</a></td></tr>
+				<tr><th scope="row">130</th><td>대구</td><td>수성구</td><td>천주성삼병원</td><td>외래진료</td><td><a href="tel:053-790-1000">053-790-1000	</a></td></tr>
+				<tr><th scope="row">131</th><td>대구</td><td>중구</td><td>경북대학교병원</td><td>외래진료</td><td><a href="tel:053-420-5114">053-420-5114	</a></td></tr>
+				<tr><th scope="row">132</th><td>대구</td><td>중구</td><td>곽병원</td><td>외래진료</td><td><a href="tel:053-252-2401">053-252-2401	</a></td></tr>
+				<tr><th scope="row">133</th><td>대구</td><td>중구</td><td>광개토병원</td><td>외래진료</td><td><a href="tel:053-565-1190">053-565-1190	</a></td></tr>
+				<tr><th scope="row">134</th><td>대구</td><td>중구</td><td>푸른병원</td><td>외래진료</td><td><a href="tel:053-471-2800">053-471-2800	</a></td></tr>
+				<tr><th scope="row">135</th><td>광주</td><td>광산구</td><td>첨단종합병원</td><td>외래진료</td><td><a href="tel:062-601-8114">062-601-8114	</a></td></tr>
+				<tr><th scope="row">136</th><td>광주</td><td>광산구</td><td>KS병원</td><td>외래진료</td><td><a href="tel:062-975-9000">062-975-9000	</a></td></tr>
+				<tr><th scope="row">137</th><td>광주</td><td>남구</td><td>광주기독병원</td><td>외래진료 및 입원</td><td><a href="tel:062-650-5000">062-650-5000	</a></td></tr>
+				<tr><th scope="row">138</th><td>광주</td><td>동구</td><td>전남대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:1899-0000">1899-0000	</a></td></tr>
+				<tr><th scope="row">139</th><td>광주</td><td>서구</td><td>서광병원</td><td>외래진료</td><td><a href="tel:062-600-8000">062-600-8000	</a></td></tr>
+				<tr><th scope="row">140</th><td>대전</td><td>동구</td><td>대전한국병원</td><td>외래진료</td><td><a href="tel:042-606-1000">042-606-1000	</a></td></tr>
+				<tr><th scope="row">141</th><td>대전</td><td>서구</td><td>대전을지대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:042-259-1000">042-259-1000	</a></td></tr>
+				<tr><th scope="row">142</th><td>대전</td><td>서구</td><td>건양대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:1577-3330">1577-3330	</a></td></tr>
+				<tr><th scope="row">143</th><td>대전</td><td>유성구</td><td>유성선병원</td><td>외래진료</td><td><a href="tel:042-1588-7011">042-1588-7011	</a></td></tr>
+				<tr><th scope="row">144</th><td>대전</td><td>중구</td><td>가톨릭대학교 대전성모병원</td><td>외래진료 및 입원</td><td><a href="tel:042-220-9114">042-220-9114	</a></td></tr>
+				<tr><th scope="row">145</th><td>대전</td><td>중구</td><td>대전선병원</td><td>외래진료 및 입원</td><td><a href="tel:042-220-8114">042-220-8114	</a></td></tr>
+				<tr><th scope="row">146</th><td>울산</td><td>남구</td><td>울산병원</td><td>외래진료</td><td><a href="tel:052-259-5000">052-259-5000	</a></td></tr>
+				<tr><th scope="row">147</th><td>울산</td><td>남구</td><td>좋은삼정병원</td><td>외래진료</td><td><a href="tel:052-220-7500">052-220-7500	</a></td></tr>
+				<tr><th scope="row">148</th><td>울산</td><td>남구</td><td>중앙병원</td><td>외래진료</td><td><a href="tel:052-226-1100">052-226-1100	</a></td></tr>
+				<tr><th scope="row">149</th><td>울산</td><td>남구</td><td>울산보람병원</td><td>외래진료</td><td><a href="tel:052-278-0114">052-278-0114	</a></td></tr>
+				<tr><th scope="row">150</th><td>울산</td><td>동구</td><td>울산대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:052-250-7000">052-250-7000	</a></td></tr>
+				<tr><th scope="row">151</th><td>울산</td><td>북구</td><td>울산시티병원</td><td>외래진료</td><td><a href="tel:052-280-9000">052-280-9000	</a></td></tr>
+				<tr><th scope="row">152</th><td>울산</td><td>북구</td><td>21세기좋은병원</td><td>외래진료</td><td><a href="tel:052-290-2100">052-290-2100	</a></td></tr>
+				<tr><th scope="row">153</th><td>울산</td><td>울주군</td><td>서울산보람병원</td><td>외래진료</td><td><a href="tel:052-255-7114">052-255-7114	</a></td></tr>
+				<tr><th scope="row">154</th><td>울산</td><td>중구</td><td>동강병원</td><td>외래진료</td><td><a href="tel:052-241-1114">052-241-1114	</a></td></tr>
+				<tr><th scope="row">155</th><td>세종</td><td></td><td>엔케이세종병원</td><td>외래진료</td><td><a href="tel:044-850-7700 ">044-850-7700 	</a></td></tr>
+				<tr><th scope="row">156</th><td>경기</td><td>고양시 덕양구</td><td>명지병원</td><td>외래진료 및 입원</td><td><a href="tel:031-810-5114">031-810-5114	</a></td></tr>
+				<tr><th scope="row">157</th><td>경기</td><td>고양시 덕양구</td><td>자인메디병원</td><td>외래진료</td><td><a href="tel:031-930-3114">031-930-3114	</a></td></tr>
+				<tr><th scope="row">158</th><td>경기</td><td>고양시 일산동구</td><td>국민건강보험공단 일산병원</td><td>외래진료 및 입원</td><td><a href="tel:031-900-0114">031-900-0114	</a></td></tr>
+				<tr><th scope="row">159</th><td>경기</td><td>고양시 일산동구</td><td>국립암센터</td><td>외래진료</td><td><a href="tel:031-920-0001">031-920-0001	</a></td></tr>
+				<tr><th scope="row">160</th><td>경기</td><td>고양시 일산동구</td><td>동국대학교 일산불교병원</td><td>외래진료 및 입원</td><td><a href="tel:031-961-7000">031-961-7000	</a></td></tr>
+				<tr><th scope="row">161</th><td>경기</td><td>고양시 일산동구</td><td>일산복음의료재단</td><td>외래진료</td><td><a href="tel:031-977-5000">031-977-5000	</a></td></tr>
+				<tr><th scope="row">162</th><td>경기</td><td>고양시 일산서구</td><td>인제대학교 일산백병원</td><td>외래진료 및 입원</td><td><a href="tel:031-910-7511">031-910-7511	</a></td></tr>
+				<tr><th scope="row">163</th><td>경기</td><td>광명시</td><td>광명성애병원</td><td>외래진료</td><td><a href="tel:02-2680-7114">02-2680-7114	</a></td></tr>
+				<tr><th scope="row">164</th><td>경기</td><td>광주시</td><td>참조은병원</td><td>외래진료</td><td><a href="tel:031-767-7575">031-767-7575	</a></td></tr>
+				<tr><th scope="row">165</th><td>경기</td><td>광주시</td><td>더플러스병원</td><td>외래진료</td><td><a href="tel:031-763-7582">031-763-7582	</a></td></tr>
+				<tr><th scope="row">166</th><td>경기</td><td>구리시</td><td>한양대학교구리병원</td><td>외래진료 및 입원</td><td><a href="tel:031-560-2114">031-560-2114	</a></td></tr>
+				<tr><th scope="row">167</th><td>경기</td><td>군포시</td><td>원광대학교의과대학산본병원</td><td>외래진료</td><td><a href="tel:031-390-2300">031-390-2300	</a></td></tr>
+				<tr><th scope="row">168</th><td>경기</td><td>군포시</td><td>지샘병원</td><td>외래진료</td><td><a href="tel:031-389-3000">031-389-3000	</a></td></tr>
+				<tr><th scope="row">169</th><td>경기</td><td>김포시</td><td>김포우리병원</td><td>외래진료 및 입원</td><td><a href="tel:031-999-1000">031-999-1000	</a></td></tr>
+				<tr><th scope="row">170</th><td>경기</td><td>김포시</td><td>뉴고려병원</td><td>외래진료 및 입원</td><td><a href="tel:031-980-9114">031-980-9114	</a></td></tr>
+				<tr><th scope="row">171</th><td>경기</td><td>김포시</td><td>히즈메디병원</td><td>외래진료</td><td><a href="tel:1588-0223">1588-0223	</a></td></tr>
+				<tr><th scope="row">172</th><td>경기</td><td>남양주시</td><td>남양주한양병원</td><td>외래진료 및 입원</td><td><a href="tel:031-510-0114">031-510-0114	</a></td></tr>
+				<tr><th scope="row">173</th><td>경기</td><td>남양주시</td><td>중앙대의료원교육협력현대병원</td><td>외래진료 및 입원</td><td><a href="tel:031-574-9119">031-574-9119	</a></td></tr>
+				<tr><th scope="row">174</th><td>경기</td><td>남양주시</td><td>베리굿병원</td><td>외래진료</td><td><a href="tel:031-567-8585">031-567-8585	</a></td></tr>
+				<tr><th scope="row">175</th><td>경기</td><td>부천시</td><td>세종병원</td><td>외래진료 및 입원</td><td><a href="tel:1599-6677">1599-6677	</a></td></tr>
+				<tr><th scope="row">176</th><td>경기</td><td>부천시</td><td>가톨릭대학교 부천성모병원</td><td>외래진료 및 입원</td><td><a href="tel:032-1577-0675">032-1577-0675	</a></td></tr>
+				<tr><th scope="row">177</th><td>경기</td><td>부천시</td><td>순천향대학교부속부천병원</td><td>외래진료 및 입원</td><td><a href="tel:032-621-5114">032-621-5114	</a></td></tr>
+				<tr><th scope="row">178</th><td>경기</td><td>부천시</td><td>다니엘종합병원</td><td>외래진료</td><td><a href="tel:032-670-0001">032-670-0001	</a></td></tr>
+				<tr><th scope="row">179</th><td>경기</td><td>부천시</td><td>예손병원</td><td>외래진료</td><td><a href="tel:1666-7582">1666-7582	</a></td></tr>
+				<tr><th scope="row">180</th><td>경기</td><td>부천시</td><td>부천우리병원</td><td>외래진료</td><td><a href="tel:032-672-4100">032-672-4100	</a></td></tr>
+				<tr><th scope="row">181</th><td>경기</td><td>성남시 분당구</td><td>차의과학대학교분당차병원</td><td>외래진료</td><td><a href="tel:1577-4488 ">1577-4488 	</a></td></tr>
+				<tr><th scope="row">182</th><td>경기</td><td>성남시 분당구</td><td>분당제생병원</td><td>외래진료 및 입원</td><td><a href="tel:031-779-0114">031-779-0114	</a></td></tr>
+				<tr><th scope="row">183</th><td>경기</td><td>성남시 분당구</td><td>분당서울대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:031-1588-3369">031-1588-3369	</a></td></tr>
+				<tr><th scope="row">184</th><td>경기</td><td>성남시 분당구</td><td>바른세상병원</td><td>외래진료</td><td><a href="tel:1577-3175">1577-3175	</a></td></tr>
+				<tr><th scope="row">185</th><td>경기</td><td>성남시 분당구</td><td>분당척병원</td><td>외래진료</td><td><a href="tel:1599-7500">1599-7500	</a></td></tr>
+				<tr><th scope="row">186</th><td>경기</td><td>성남시 분당구</td><td>서울나우병원</td><td>외래진료</td><td><a href="tel:031-788-5600">031-788-5600	</a></td></tr>
+				<tr><th scope="row">187</th><td>경기</td><td>성남시 수정구</td><td>정병원</td><td>외래진료 및 입원</td><td><a href="tel:031-750-6000">031-750-6000	</a></td></tr>
+				<tr><th scope="row">188</th><td>경기</td><td>성남시 수정구</td><td>지우병원</td><td>외래진료</td><td><a href="tel:1544-6686">1544-6686	</a></td></tr>
+				<tr><th scope="row">189</th><td>경기</td><td>성남시 중원구</td><td>바른마디병원</td><td>외래진료</td><td><a href="tel:031-735-9110">031-735-9110	</a></td></tr>
+				<tr><th scope="row">190</th><td>경기</td><td>수원시 권선구</td><td>제이에스병원</td><td>외래진료</td><td><a href="tel:1800-5446">1800-5446	</a></td></tr>
+				<tr><th scope="row">191</th><td>경기</td><td>수원시 영통구</td><td>아주대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:031-1688-6114">031-1688-6114	</a></td></tr>
+				<tr><th scope="row">192</th><td>경기</td><td>수원시 영통구</td><td>나누리수원병원</td><td>외래진료</td><td><a href="tel:1688-9797">1688-9797	</a></td></tr>
+				<tr><th scope="row">193</th><td>경기</td><td>수원시 팔달구</td><td>가톨릭대학교 성빈센트병원</td><td>외래진료 및 입원</td><td><a href="tel:1577-8588">1577-8588	</a></td></tr>
+				<tr><th scope="row">194</th><td>경기</td><td>수원시 팔달구</td><td>동수원병원</td><td>외래진료</td><td><a href="tel:031-210-0114">031-210-0114	</a></td></tr>
+				<tr><th scope="row">195</th><td>경기</td><td>수원시 팔달구</td><td>이춘택병원</td><td>외래진료</td><td><a href="tel:1588-2927">1588-2927	</a></td></tr>
+				<tr><th scope="row">196</th><td>경기</td><td>수원시 팔달구</td><td>윌스기념병원</td><td>외래진료</td><td><a href="tel:031-223-2233">031-223-2233	</a></td></tr>
+				<tr><th scope="row">197</th><td>경기</td><td>시흥시</td><td>신천연합병원</td><td>외래진료</td><td><a href="tel:031-310-6300">031-310-6300	</a></td></tr>
+				<tr><th scope="row">198</th><td>경기</td><td>시흥시</td><td>센트럴병원</td><td>외래진료</td><td><a href="tel:031-8041-3854">031-8041-3854	</a></td></tr>
+				<tr><th scope="row">199</th><td>경기</td><td>시흥시</td><td>시화병원</td><td>외래진료</td><td><a href="tel:031-432-2600">031-432-2600	</a></td></tr>
+				<tr><th scope="row">200</th><td>경기</td><td>안산시</td><td>근로복지공단안산병원</td><td>외래진료</td><td><a href="tel:031-500-1114">031-500-1114	</a></td></tr>
+				<tr><th scope="row">201</th><td>경기</td><td>안산시 단원구</td><td>고려대학교안산병원</td><td>외래진료 및 입원</td><td><a href="tel:031-412-5114">031-412-5114	</a></td></tr>
+				<tr><th scope="row">202</th><td>경기</td><td>안산시 단원구</td><td>단원병원</td><td>외래진료</td><td><a href="tel:031-8040-6600">031-8040-6600	</a></td></tr>
+				<tr><th scope="row">203</th><td>경기</td><td>안산시 단원구</td><td>온누리병원</td><td>외래진료</td><td><a href="tel:031-412-2200">031-412-2200	</a></td></tr>
+				<tr><th scope="row">204</th><td>경기</td><td>안산시 상록구</td><td>사랑의병원</td><td>외래진료</td><td><a href="tel:031-439-3000">031-439-3000	</a></td></tr>
+				<tr><th scope="row">205</th><td>경기</td><td>안성시</td><td>안성성모병원</td><td>외래진료</td><td><a href="tel:031-675-6007">031-675-6007	</a></td></tr>
+				<tr><th scope="row">206</th><td>경기</td><td>안양시 동안구</td><td>한림대학교성심병원</td><td>외래진료 및 입원</td><td><a href="tel:031-380-1500">031-380-1500	</a></td></tr>
+				<tr><th scope="row">207</th><td>경기</td><td>안양시 동안구</td><td>안양윌스기념병원</td><td>외래진료</td><td><a href="tel:031-460-1114">031-460-1114	</a></td></tr>
+				<tr><th scope="row">208</th><td>경기</td><td>여주시</td><td>연세새로운병원</td><td>외래진료</td><td><a href="tel:031-885-7582">031-885-7582	</a></td></tr>
+				<tr><th scope="row">209</th><td>경기</td><td>여주시</td><td>세종여주병원</td><td>외래진료 및 입원</td><td><a href="tel:031-880-7700">031-880-7700	</a></td></tr>
+				<tr><th scope="row">210</th><td>경기</td><td>오산시</td><td>오산한국병원</td><td>외래진료 및 입원</td><td><a href="tel:1566-3534">1566-3534	</a></td></tr>
+				<tr><th scope="row">211</th><td>경기</td><td>오산시</td><td>조은오산병원</td><td>외래진료</td><td><a href="tel:1544-5355">1544-5355	</a></td></tr>
+				<tr><th scope="row">212</th><td>경기</td><td>용인시 기흥구</td><td>연세대학교 용인세브란스병원</td><td>외래진료 및 입원</td><td><a href="tel:1899-1004">1899-1004	</a></td></tr>
+				<tr><th scope="row">213</th><td>경기</td><td>용인시 기흥구</td><td>강남병원</td><td>외래진료 및 입원</td><td><a href="tel:031-300-0114">031-300-0114	</a></td></tr>
+				<tr><th scope="row">214</th><td>경기</td><td>용인시 처인구</td><td>다보스병원</td><td>외래진료</td><td><a href="tel:031-8021-2114">031-8021-2114	</a></td></tr>
+				<tr><th scope="row">215</th><td>경기</td><td>의정부시</td><td>가톨릭대학교 의정부성모병원</td><td>외래진료 및 입원</td><td><a href="tel:031-1661-7500">031-1661-7500	</a></td></tr>
+				<tr><th scope="row">216</th><td>경기</td><td>의정부시</td><td>의정부백병원</td><td>외래진료</td><td><a href="tel:031-856-8111">031-856-8111	</a></td></tr>
+				<tr><th scope="row">217</th><td>경기</td><td>의정부시</td><td>성베드로병원</td><td>외래진료</td><td><a href="tel:031-840-1700">031-840-1700	</a></td></tr>
+				<tr><th scope="row">218</th><td>경기</td><td>이천시</td><td>경기도의료원 이천병원</td><td>외래진료 및 입원</td><td><a href="tel:031-630-4200">031-630-4200	</a></td></tr>
+				<tr><th scope="row">219</th><td>경기</td><td>이천시</td><td>이천엘리야병원</td><td>외래진료</td><td><a href="tel:1800-4275">1800-4275	</a></td></tr>
+				<tr><th scope="row">220</th><td>경기</td><td>파주시</td><td>메디인병원</td><td>외래진료</td><td><a href="tel:031-1566-1991">031-1566-1991	</a></td></tr>
+				<tr><th scope="row">221</th><td>경기</td><td>평택시</td><td>박애병원</td><td>외래진료 및 입원</td><td><a href="tel:031-652-2121">031-652-2121	</a></td></tr>
+				<tr><th scope="row">222</th><td>경기</td><td>평택시</td><td>평택굿모닝병원</td><td>외래진료 및 입원</td><td><a href="tel:031-659-7700">031-659-7700	</a></td></tr>
+				<tr><th scope="row">223</th><td>경기</td><td>평택시</td><td>평택성모병원</td><td>외래진료 및 입원</td><td><a href="tel:031-1800-8800">031-1800-8800	</a></td></tr>
+				<tr><th scope="row">224</th><td>경기</td><td>평택시</td><td>박병원</td><td>외래진료 및 입원</td><td><a href="tel:031-666-2600">031-666-2600	</a></td></tr>
+				<tr><th scope="row">225</th><td>경기</td><td>포천시</td><td>포천우리병원</td><td>외래진료</td><td><a href="tel:031-542-0222">031-542-0222	</a></td></tr>
+				<tr><th scope="row">226</th><td>경기</td><td>하남시</td><td>하남SD병원</td><td>외래진료</td><td><a href="tel:031-793-2882">031-793-2882	</a></td></tr>
+				<tr><th scope="row">227</th><td>경기</td><td>화성시</td><td>화성중앙종합병원</td><td>외래진료 및 입원</td><td><a href="tel:031-352-8114">031-352-8114	</a></td></tr>
+				<tr><th scope="row">228</th><td>경기</td><td>화성시</td><td>한림대학교 동탄성심병원</td><td>외래진료 및 입원</td><td><a href="tel:031-8086-3000">031-8086-3000	</a></td></tr>
+				<tr><th scope="row">229</th><td>경기</td><td>화성시</td><td>원광종합병원</td><td>외래진료</td><td><a href="tel:031-8077-7200">031-8077-7200	</a></td></tr>
+				<tr><th scope="row">230</th><td>경기</td><td>화성시</td><td>화성디에스병원</td><td>외래진료 및 입원</td><td><a href="tel:1600-5982">1600-5982	</a></td></tr>
+				<tr><th scope="row">231</th><td>강원</td><td>강릉시</td><td>강릉고려병원</td><td>외래진료</td><td><a href="tel:033-649-0100">033-649-0100	</a></td></tr>
+				<tr><th scope="row">232</th><td>강원</td><td>강릉시</td><td>강릉아산병원</td><td>외래진료 및 입원</td><td><a href="tel:033-610-3114">033-610-3114	</a></td></tr>
+				<tr><th scope="row">233</th><td>강원</td><td>동해시</td><td>근로복지공단 동해병원</td><td>외래진료</td><td><a href="tel:033-530-3100">033-530-3100	</a></td></tr>
+				<tr><th scope="row">234</th><td>강원</td><td>속초시</td><td>속초보광병원</td><td>외래진료</td><td><a href="tel:033-639-8500">033-639-8500	</a></td></tr>
+				<tr><th scope="row">235</th><td>강원</td><td>원주시</td><td>성지병원</td><td>외래진료</td><td><a href="tel:033-760-3114">033-760-3114	</a></td></tr>
+				<tr><th scope="row">236</th><td>강원</td><td>춘천시</td><td>한림대학교춘천성심병원</td><td>외래진료</td><td><a href="tel:033-240-5000">033-240-5000	</a></td></tr>
+				<tr><th scope="row">237</th><td>강원</td><td>춘천시</td><td>강원대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:033-258-2000">033-258-2000	</a></td></tr>
+				<tr><th scope="row">238</th><td>강원</td><td>홍천군</td><td>홍천아산병원</td><td>외래진료</td><td><a href="tel:033-430-5151">033-430-5151	</a></td></tr>
+				<tr><th scope="row">239</th><td>충북</td><td>제천시</td><td>제천서울병원</td><td>외래진료</td><td><a href="tel:043-642-7606">043-642-7606	</a></td></tr>
+				<tr><th scope="row">240</th><td>충북</td><td>제천시</td><td>제천명지병원</td><td>외래진료</td><td><a href="tel:043-640-8114">043-640-8114	</a></td></tr>
+				<tr><th scope="row">241</th><td>충북</td><td>제천시</td><td>제천성지병원</td><td>외래진료</td><td><a href="tel:1899-1188">1899-1188	</a></td></tr>
+				<tr><th scope="row">242</th><td>충북</td><td>진천군</td><td>진천성모병원</td><td>외래진료</td><td><a href="tel:043-533-1711">043-533-1711	</a></td></tr>
+				<tr><th scope="row">243</th><td>충북</td><td>청주시 상당구</td><td>한국병원</td><td>외래진료</td><td><a href="tel:043-222-7000">043-222-7000	</a></td></tr>
+				<tr><th scope="row">244</th><td>충북</td><td>청주시 상당구</td><td>효성병원</td><td>외래진료</td><td><a href="tel:043-221-5000">043-221-5000	</a></td></tr>
+				<tr><th scope="row">245</th><td>충북</td><td>청주시 청원구</td><td>청주성모병원</td><td>외래진료</td><td><a href="tel:043-219-8000">043-219-8000	</a></td></tr>
+				<tr><th scope="row">246</th><td>충북</td><td>청주시 흥덕구</td><td>하나병원</td><td>외래진료</td><td><a href="tel:043-230-6114">043-230-6114	</a></td></tr>
+				<tr><th scope="row">247</th><td>충북</td><td>청주시 흥덕구</td><td>베스티안병원</td><td>외래진료</td><td><a href="tel:043-910-7575">043-910-7575	</a></td></tr>
+				<tr><th scope="row">248</th><td>충북</td><td>충주시</td><td>건국대학교 충주병원</td><td>외래진료</td><td><a href="tel:043-840-8200">043-840-8200	</a></td></tr>
+				<tr><th scope="row">249</th><td>충남</td><td>논산시</td><td>백제병원</td><td>외래진료</td><td><a href="tel:041-730-8888">041-730-8888	</a></td></tr>
+				<tr><th scope="row">250</th><td>충남</td><td>당진시</td><td>당진종합병원</td><td>외래진료</td><td><a href="tel:041-357-0100">041-357-0100	</a></td></tr>
+				<tr><th scope="row">251</th><td>충남</td><td>서산시</td><td>서산중앙병원</td><td>외래진료</td><td><a href="tel:041-661-1000">041-661-1000	</a></td></tr>
+				<tr><th scope="row">252</th><td>충남</td><td>아산시</td><td>아산충무병원</td><td>외래진료 및 입원</td><td><a href="tel:041-536-6666">041-536-6666	</a></td></tr>
+				<tr><th scope="row">253</th><td>충남</td><td>아산시</td><td>현대병원</td><td>외래진료</td><td><a href="tel:041-546-3636">041-546-3636	</a></td></tr>
+				<tr><th scope="row">254</th><td>충남</td><td>예산군</td><td>예산종합병원</td><td>외래진료</td><td><a href="tel:041-330-4000">041-330-4000	</a></td></tr>
+				<tr><th scope="row">255</th><td>충남</td><td>천안시 동남구</td><td>단국대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:041-1588-0063">041-1588-0063	</a></td></tr>
+				<tr><th scope="row">256</th><td>충남</td><td>천안시 동남구</td><td>순천향대학교 부속 천안병원</td><td>외래진료 및 입원</td><td><a href="tel:041-570-2114">041-570-2114	</a></td></tr>
+				<tr><th scope="row">257</th><td>충남</td><td>천안시 동남구</td><td>천안우리병원</td><td>외래진료</td><td><a href="tel:041-590-9000">041-590-9000	</a></td></tr>
+				<tr><th scope="row">258</th><td>충남</td><td>천안시 서북구</td><td>천안충무병원</td><td>외래진료 및 입원</td><td><a href="tel:041-570-7555">041-570-7555	</a></td></tr>
+				<tr><th scope="row">259</th><td>충남</td><td>천안시 서북구</td><td>연세나무병원</td><td>외래진료</td><td><a href="tel:041-537-0000">041-537-0000	</a></td></tr>
+				<tr><th scope="row">260</th><td>충남</td><td>천안시 서북구</td><td>서울대정병원</td><td>외래진료</td><td><a href="tel:041-415-0001">041-415-0001	</a></td></tr>
+				<tr><th scope="row">261</th><td>전북</td><td>고창군</td><td>고창종합병원</td><td>외래진료</td><td><a href="tel:063-560-5600">063-560-5600	</a></td></tr>
+				<tr><th scope="row">262</th><td>전북</td><td>군산시</td><td>군산의료원</td><td>외래진료</td><td><a href="tel:063-472-5000">063-472-5000	</a></td></tr>
+				<tr><th scope="row">263</th><td>전북</td><td>군산시</td><td>동군산병원</td><td>외래진료 및 입원</td><td><a href="tel:063-440-0300">063-440-0300	</a></td></tr>
+				<tr><th scope="row">264</th><td>전북</td><td>남원시</td><td>남원의료원</td><td>외래진료</td><td><a href="tel:063-620-1114">063-620-1114	</a></td></tr>
+				<tr><th scope="row">265</th><td>전북</td><td>익산시</td><td>익산병원</td><td>외래진료</td><td><a href="tel:063-840-9114">063-840-9114	</a></td></tr>
+				<tr><th scope="row">266</th><td>전북</td><td>전주시 덕진구</td><td>전북대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:063-250-1114">063-250-1114	</a></td></tr>
+				<tr><th scope="row">267</th><td>전북</td><td>전주시 덕진구</td><td>대자인병원</td><td>외래진료</td><td><a href="tel:063-240-2000">063-240-2000	</a></td></tr>
+				<tr><th scope="row">268</th><td>전북</td><td>전주시 덕진구</td><td>호성전주병원</td><td>외래진료</td><td><a href="tel:063-240-8800">063-240-8800	</a></td></tr>
+				<tr><th scope="row">269</th><td>전북</td><td>전주시 완산구</td><td>예수병원</td><td>외래진료 및 입원</td><td><a href="tel:063-230-8114">063-230-8114	</a></td></tr>
+				<tr><th scope="row">270</th><td>전북</td><td>전주시 완산구</td><td>전주병원</td><td>외래진료</td><td><a href="tel:063-220-7200">063-220-7200	</a></td></tr>
+				<tr><th scope="row">271</th><td>전남</td><td>고흥군</td><td>고흥종합병원</td><td>외래진료 및 입원</td><td><a href="tel:061-835-6000">061-835-6000	</a></td></tr>
+				<tr><th scope="row">272</th><td>전남</td><td>고흥군</td><td>녹동현대병원</td><td>외래진료 및 입원</td><td><a href="tel:061-840-1200 ">061-840-1200 	</a></td></tr>
+				<tr><th scope="row">273</th><td>전남</td><td>목포시</td><td>목포시의료원</td><td>외래진료</td><td><a href="tel:061-260-6500">061-260-6500	</a></td></tr>
+				<tr><th scope="row">274</th><td>전남</td><td>목포시</td><td>목포한국병원</td><td>외래진료 및 입원</td><td><a href="tel:061-270-5500">061-270-5500	</a></td></tr>
+				<tr><th scope="row">275</th><td>전남</td><td>목포시</td><td>목포기독병원</td><td>외래진료 및 입원</td><td><a href="tel:061-280-7500">061-280-7500	</a></td></tr>
+				<tr><th scope="row">276</th><td>전남</td><td>목포시</td><td>목포중앙병원</td><td>외래진료 및 입원</td><td><a href="tel:061-280-3000">061-280-3000	</a></td></tr>
+				<tr><th scope="row">277</th><td>전남</td><td>순천시</td><td>성가롤로병원</td><td>외래진료 및 입원</td><td><a href="tel:061-720-6434">061-720-6434	</a></td></tr>
+				<tr><th scope="row">278</th><td>전남</td><td>순천시</td><td>순천한국병원</td><td>외래진료 및 입원</td><td><a href="tel:061-740-5000">061-740-5000	</a></td></tr>
+				<tr><th scope="row">279</th><td>전남</td><td>여수시</td><td>여천전남병원</td><td>외래진료</td><td><a href="tel:061-690-6000">061-690-6000	</a></td></tr>
+				<tr><th scope="row">280</th><td>전남</td><td>여수시</td><td>여수전남병원</td><td>외래진료</td><td><a href="tel:061-640-7575">061-640-7575	</a></td></tr>
+				<tr><th scope="row">281</th><td>전남</td><td>여수시</td><td>여수제일병원</td><td>외래진료</td><td><a href="tel:061-689-8114">061-689-8114	</a></td></tr>
+				<tr><th scope="row">282</th><td>전남</td><td>여수시</td><td>여수한국병원</td><td>외래진료</td><td><a href="tel:061-653-2000">061-653-2000	</a></td></tr>
+				<tr><th scope="row">283</th><td>전남</td><td>장흥군</td><td>장흥종합병원</td><td>외래진료</td><td><a href="tel:061-862-8300">061-862-8300	</a></td></tr>
+				<tr><th scope="row">284</th><td>경북</td><td>경산시</td><td>경산중앙병원</td><td>외래진료</td><td><a href="tel:053-715-0100">053-715-0100	</a></td></tr>
+				<tr><th scope="row">285</th><td>경북</td><td>경산시</td><td>세명병원</td><td>외래진료</td><td><a href="tel:053-819-8364">053-819-8364	</a></td></tr>
+				<tr><th scope="row">286</th><td>경북</td><td>경주시</td><td>동국대학교 경주병원</td><td>외래진료</td><td><a href="tel:054-748-9300">054-748-9300	</a></td></tr>
+				<tr><th scope="row">287</th><td>경북</td><td>구미시</td><td>차의과학대학교부속구미차병원</td><td>외래진료</td><td><a href="tel:054-450-9700">054-450-9700	</a></td></tr>
+				<tr><th scope="row">288</th><td>경북</td><td>구미시</td><td>순천향대학교부속구미병원</td><td>외래진료 및 입원</td><td><a href="tel:054-468-9114">054-468-9114	</a></td></tr>
+				<tr><th scope="row">289</th><td>경북</td><td>구미시</td><td>바른유병원</td><td>외래진료</td><td><a href="tel:054-457-8676">054-457-8676	</a></td></tr>
+				<tr><th scope="row">290</th><td>경북</td><td>김천시</td><td>김천제일병원</td><td>외래진료</td><td><a href="tel:054-420-9300">054-420-9300	</a></td></tr>
+				<tr><th scope="row">291</th><td>경북</td><td>문경시</td><td>문경제일병원</td><td>외래진료</td><td><a href="tel:054-550-7700">054-550-7700	</a></td></tr>
+				<tr><th scope="row">292</th><td>경북</td><td>상주시</td><td>상주성모병원</td><td>외래진료</td><td><a href="tel:054-532-5001">054-532-5001	</a></td></tr>
+				<tr><th scope="row">293</th><td>경북</td><td>안동시</td><td>안동성소병원</td><td>외래진료</td><td><a href="tel:054-850-8114">054-850-8114	</a></td></tr>
+				<tr><th scope="row">294</th><td>경북</td><td>안동시</td><td>안동병원</td><td>외래진료</td><td><a href="tel:054-840-1004">054-840-1004	</a></td></tr>
+				<tr><th scope="row">295</th><td>경북</td><td>포항시 남구</td><td>포항성모병원</td><td>외래진료</td><td><a href="tel:054-272-0151">054-272-0151	</a></td></tr>
+				<tr><th scope="row">296</th><td>경북</td><td>포항시 남구</td><td>포항세명기독병원</td><td>외래진료 및 입원</td><td><a href="tel:054-275-0005">054-275-0005	</a></td></tr>
+				<tr><th scope="row">297</th><td>경북</td><td>포항시 북구</td><td>좋은선린병원</td><td>외래진료</td><td><a href="tel:054-245-5000">054-245-5000	</a></td></tr>
+				<tr><th scope="row">298</th><td>경북</td><td>포항시 북구</td><td>포항우리병원</td><td>외래진료</td><td><a href="tel:054-240-6000">054-240-6000	</a></td></tr>
+				<tr><th scope="row">299</th><td>경남</td><td>거제시</td><td>거붕백병원</td><td>외래진료</td><td><a href="tel:055-733-0000">055-733-0000	</a></td></tr>
+				<tr><th scope="row">300</th><td>경남</td><td>거제시</td><td>대우병원</td><td>외래진료 및 입원</td><td><a href="tel:055-680-8114">055-680-8114	</a></td></tr>
+				<tr><th scope="row">301</th><td>경남</td><td>거제시</td><td>맑은샘병원</td><td>외래진료</td><td><a href="tel:055-736-1004">055-736-1004	</a></td></tr>
+				<tr><th scope="row">302</th><td>경남</td><td>거창군</td><td>거창적십자병원</td><td>외래진료</td><td><a href="tel:055-944-3251">055-944-3251	</a></td></tr>
+				<tr><th scope="row">303</th><td>경남</td><td>김해시</td><td>조은금강병원</td><td>외래진료</td><td><a href="tel:055-330-0300">055-330-0300	</a></td></tr>
+				<tr><th scope="row">304</th><td>경남</td><td>김해시</td><td>경희의료원 교육협력 중앙병원</td><td>외래진료</td><td><a href="tel:055-330-6000">055-330-6000	</a></td></tr>
+				<tr><th scope="row">305</th><td>경남</td><td>김해시</td><td>갑을장유병원</td><td>외래진료</td><td><a href="tel:055-310-6000">055-310-6000	</a></td></tr>
+				<tr><th scope="row">306</th><td>경남</td><td>김해시</td><td>진영병원</td><td>외래진료</td><td><a href="tel:055-340-3700">055-340-3700	</a></td></tr>
+				<tr><th scope="row">307</th><td>경남</td><td>밀양시</td><td>밀양윤병원</td><td>외래진료</td><td><a href="tel:055-354-2200">055-354-2200	</a></td></tr>
+				<tr><th scope="row">308</th><td>경남</td><td>사천시</td><td>삼천포서울병원</td><td>외래진료</td><td><a href="tel:055-835-9900">055-835-9900	</a></td></tr>
+				<tr><th scope="row">309</th><td>경남</td><td>양산시</td><td>베데스다병원</td><td>외래진료</td><td><a href="tel:055-384-9901">055-384-9901	</a></td></tr>
+				<tr><th scope="row">310</th><td>경남</td><td>양산시</td><td>양산부산대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:055-1577-7512">055-1577-7512	</a></td></tr>
+				<tr><th scope="row">311</th><td>경남</td><td>진주시</td><td>진주고려병원</td><td>외래진료</td><td><a href="tel:055-751-2500">055-751-2500	</a></td></tr>
+				<tr><th scope="row">312</th><td>경남</td><td>진주시</td><td>경상대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:055-750-8000">055-750-8000	</a></td></tr>
+				<tr><th scope="row">313</th><td>경남</td><td>진주시</td><td>진주제일병원</td><td>외래진료</td><td><a href="tel:055-750-7123">055-750-7123	</a></td></tr>
+				<tr><th scope="row">314</th><td>경남</td><td>진주시</td><td>한일병원</td><td>외래진료</td><td><a href="tel:055-759-7777">055-759-7777	</a></td></tr>
+				<tr><th scope="row">315</th><td>경남</td><td>진주시</td><td>반도병원</td><td>외래진료</td><td><a href="tel:055-747-6000">055-747-6000	</a></td></tr>
+				<tr><th scope="row">316</th><td>경남</td><td>진주시</td><td>진주세란병원</td><td>외래진료</td><td><a href="tel:055-760-7578">055-760-7578	</a></td></tr>
+				<tr><th scope="row">317</th><td>경남</td><td>진주시</td><td>진주복음병원</td><td>외래진료</td><td><a href="tel:055-743-2580">055-743-2580	</a></td></tr>
+				<tr><th scope="row">318</th><td>경남</td><td>진주시</td><td>진주바른병원</td><td>외래진료</td><td><a href="tel:055-790-3000">055-790-3000	</a></td></tr>
+				<tr><th scope="row">319</th><td>경남</td><td>창원시 마산합포구</td><td>창원제일종합병원</td><td>외래진료</td><td><a href="tel:055-223-9000">055-223-9000	</a></td></tr>
+				<tr><th scope="row">320</th><td>경남</td><td>창원시 마산합포구</td><td>에스엠지연세병원</td><td>외래진료 및 입원</td><td><a href="tel:055-243-0100">055-243-0100	</a></td></tr>
+				<tr><th scope="row">321</th><td>경남</td><td>창원시 마산회원구</td><td>청아병원</td><td>외래진료</td><td><a href="tel:055-230-1500">055-230-1500	</a></td></tr>
+				<tr><th scope="row">322</th><td>경남</td><td>창원시 마산회원구</td><td>365병원</td><td>외래진료</td><td><a href="tel:055-248-0365">055-248-0365	</a></td></tr>
+				<tr><th scope="row">323</th><td>경남</td><td>창원시 마산회원구</td><td>마산서울병원</td><td>외래진료</td><td><a href="tel:055-299-7000">055-299-7000	</a></td></tr>
+				<tr><th scope="row">324</th><td>경남</td><td>창원시 성산구</td><td>CNA서울아동병원</td><td>외래진료</td><td><a href="tel:055-262-8511">055-262-8511	</a></td></tr>
+				<tr><th scope="row">325</th><td>경남</td><td>창원시 진해구</td><td>연세에스병원</td><td>외래진료</td><td><a href="tel:055-548-7700">055-548-7700	</a></td></tr>
+				<tr><th scope="row">326</th><td>경남</td><td>함양군</td><td>함양성심병원</td><td>외래진료</td><td><a href="tel:055-963-4322">055-963-4322	</a></td></tr>
+				<tr><th scope="row">327</th><td>제주</td><td>제주시</td><td>제주한라병원</td><td>외래진료 및 입원</td><td><a href="tel:064-740-5000">064-740-5000	</a></td></tr>
+				<tr><th scope="row">328</th><td>제주</td><td>제주시</td><td>제주대학교병원</td><td>외래진료 및 입원</td><td><a href="tel:064-717-1114">064-717-1114	</a></td></tr>
+				<tr><th scope="row">329</th><td>제주</td><td>제주시</td><td>한마음병원</td><td>외래진료</td><td><a href="tel:064-750-9000">064-750-9000	</a></td></tr>
+				<tr><th scope="row">330</th><td>제주</td><td>제주시</td><td>중앙병원</td><td>외래진료</td><td><a href="tel:064-786-7000">064-786-7000	</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
