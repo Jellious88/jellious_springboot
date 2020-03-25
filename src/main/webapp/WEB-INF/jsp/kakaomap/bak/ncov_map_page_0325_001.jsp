@@ -6,7 +6,7 @@
 <html>
 <head>
 
-    <title>NCOV TEST PAGE</title>
+    <title>코로나19 선별진료소 및 국민안심병원 현황 맵</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="/resources/css/map/nw.css"> -->
 	<link rel="stylesheet" href="/css/map/map.css">
 	<script src="/js/map/jquery-1.11.2.min.js"></script>
+<!-- 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0a229229b783e6330fc2e6e9a459c730&libraries=services"></script> -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4252e979058064f2029555413d35b8eb&libraries=services"></script>
 	<script src="/js/map/map.js"></script>
 <!-- 	<script src="/js/map/selectRegion.js"></script> -->
@@ -43,10 +44,10 @@
 		<div class="side_wrap">
 			<div id="menu_wrap">
 				<div class="mp_option">
-					<div class="use_bounds">
+					<div class="btn_area">
 						<ul>
-							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('선별진료소')"><span>선별진료소</span></button></li>
 							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('국민안심병원')"><span>국민안심병원</span></button></li>
+							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('선별진료소')"><span>선별진료소</span></button></li>
 							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('검체채취가능')"><span>검체채취가능진료소</span></button></li>
 						</ul>
 						
@@ -82,6 +83,7 @@
 						 -->
 						<div class="mpo_check">
 <!-- 							<div><input type="checkbox" id="useMapBounds" /><label for="useMapBounds">지도 내 검색</label></div> -->
+							<div><a id="list_view_btn"><span>목록</span><em class="txt_open">보기</em><em class="txt_close">닫기</em></a></div>
 							<div><a class="btn_reset" onclick="initPlacesList(true);return false;"><span>검색 초기화</span></a></div>
 						</div>
 					</form>

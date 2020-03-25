@@ -15,7 +15,7 @@ public class kakaomapController {
 	
 	@GetMapping("") 
 	public String welcome() {
-		return "/kakaomap/index"; 
+		return "/kakaomap/ncov_map_page"; 
 	}
 	
 }

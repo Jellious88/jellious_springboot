@@ -15,11 +15,11 @@
 	<!-- <link rel="stylesheet" href="/resources/css/map/base.css">
 	<link rel="stylesheet" href="/resources/css/map/component.css">
 	<link rel="stylesheet" href="/resources/css/map/nw.css"> -->
-	<link rel="stylesheet" href="/css/map/map.css">
-	<script src="/js/map/jquery-1.11.2.min.js"></script>
+	<link rel="stylesheet" href="/resources/css/map/map.css">
+	<script src="/resources/js/map/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4252e979058064f2029555413d35b8eb&libraries=services"></script>
-	<script src="/js/map/map.js"></script>
-<!-- 	<script src="/js/map/selectRegion.js"></script> -->
+	<script src="/resources/js/map/map.js"></script>
+	<script src="/resources/js/map/selectRegion.js"></script>
 </head>
 <body>
 <div class="map_popup_wrap">
@@ -43,14 +43,11 @@
 		<div class="side_wrap">
 			<div id="menu_wrap">
 				<div class="mp_option">
-					<div class="use_bounds">
-						<ul>
-							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('선별진료소')"><span>선별진료소</span></button></li>
-							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('국민안심병원')"><span>국민안심병원</span></button></li>
-							<li><button class="btn btn_sm btn_blue" onclick="searchPlaces('검체채취가능')"><span>검체채취가능진료소</span></button></li>
-						</ul>
-						
-					</div>
+				<div class="use_bounds">
+					<button class="btn btn_md btn_blue" onclick="setKeywordAndSearchPlace('선별진료소', true)"><span>선별진료소</span></button>
+					<button class="btn btn_md btn_blue" onclick="setKeywordAndSearchPlace('안심병원', true)"><span>안심병원</span></button>
+					<button class="btn btn_md btn_blue" onclick="setKeywordAndSearchPlace('검체채취가능', true)"><span>검체채취가능병원</span></button>
+				</div>
 					<form onsubmit="searchPlaces(); return false;">
 						<!-- 
 						<div class="mpo_form">
@@ -81,7 +78,7 @@
 						</div>
 						 -->
 						<div class="mpo_check">
-<!-- 							<div><input type="checkbox" id="useMapBounds" /><label for="useMapBounds">지도 내 검색</label></div> -->
+							<div><input type="checkbox" id="useMapBounds" /><label for="useMapBounds">지도 내 검색</label></div>
 							<div><a class="btn_reset" onclick="initPlacesList(true);return false;"><span>검색 초기화</span></a></div>
 						</div>
 					</form>
